@@ -3,7 +3,7 @@ package eu.domibus.connector.domain.model;
 import eu.ecodex.dc5.message.model.DC5Message;
 import org.springframework.core.style.ToStringCreator;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 
 /**

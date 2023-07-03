@@ -8,9 +8,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.style.ToStringCreator;
 
 import javax.persistence.AttributeConverter;
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import javax.ws.rs.core.Link;
 import java.time.Duration;
 import java.util.HashMap;

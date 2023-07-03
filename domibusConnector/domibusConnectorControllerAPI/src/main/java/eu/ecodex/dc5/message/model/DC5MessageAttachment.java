@@ -12,7 +12,7 @@ import lombok.*;
 import org.springframework.core.style.ToStringCreator;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 
 /**

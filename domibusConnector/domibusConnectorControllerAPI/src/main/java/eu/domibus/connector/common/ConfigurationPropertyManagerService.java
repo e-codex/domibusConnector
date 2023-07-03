@@ -3,8 +3,8 @@ package eu.domibus.connector.common;
 import eu.domibus.connector.domain.model.DC5BusinessDomain;
 import org.springframework.lang.Nullable;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;

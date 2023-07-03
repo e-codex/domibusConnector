@@ -11,6 +11,7 @@ import eu.spocseu.edeliverygw.configuration.xsd.EDeliveryDetail;
 import eu.spocseu.edeliverygw.configuration.xsd.EDeliveryDetail.PostalAdress;
 import eu.spocseu.edeliverygw.configuration.xsd.EDeliveryDetail.Server;
 import org.apache.commons.io.FileUtils;
+import org.assertj.core.api.Assertions;
 import org.etsi.uri._02640.v2.EventReasonType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -193,6 +194,7 @@ public class ECodexEvidenceBuilderTest {
 
         EDeliveryDetails evidenceIssuerDetails = createEntityDetailsObject();
         previousEvidence = createREMEvidenceType1();
+        Assertions.assertThat(previousEvidence).isNotNull();
 
         signedxmlData = ecodexEvidenceBuilder.createDeliveryNonDeliveryToRecipient(isDelivery, eventReason, evidenceIssuerDetails, previousEvidence);
 

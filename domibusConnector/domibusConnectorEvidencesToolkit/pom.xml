@@ -58,10 +58,10 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.santuario</groupId>
-            <artifactId>xmlsec</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.santuario</groupId>-->
+<!--            <artifactId>xmlsec</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>eu.domibus.connector</groupId>
             <artifactId>domibusConnectorControllerAPI</artifactId>
@@ -89,8 +89,9 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
+                <groupId>com.helger.maven</groupId>
+                <artifactId>jaxb40-maven-plugin</artifactId>
+                <version>0.16.1</version>
                 <executions>
                     <execution>
                         <id>schemas</id>

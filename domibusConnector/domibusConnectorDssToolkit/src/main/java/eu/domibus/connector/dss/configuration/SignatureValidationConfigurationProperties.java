@@ -7,8 +7,8 @@ import eu.ecodex.utils.configuration.api.annotation.ConfigurationLabel;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @MapNested
 public class SignatureValidationConfigurationProperties extends CertificateVerifierConfigurationProperties {

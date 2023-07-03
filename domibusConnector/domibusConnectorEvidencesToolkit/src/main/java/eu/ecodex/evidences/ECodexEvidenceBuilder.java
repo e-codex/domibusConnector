@@ -11,7 +11,7 @@ import java.security.cert.X509Certificate;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -206,7 +206,7 @@ public class ECodexEvidenceBuilder implements EvidenceBuilder {
         try {
             initialSend = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
         } catch (DatatypeConfigurationException e1) {
-            e1.printStackTrace();
+            throw new RuntimeException("DatatypeConfigurationException newXMLGregorianCalendar", e1);
         }
         DeliveryConstraints deliveryConstraints = new DeliveryConstraints();
         deliveryConstraints.setInitialSend(initialSend);
@@ -369,6 +369,7 @@ public class ECodexEvidenceBuilder implements EvidenceBuilder {
             evidenceToBeSigned.serialize(fo);
         } catch (JAXBException e) {
             log.error("Cannot serialize evidence", e);
+            throw new RuntimeException("Cannot serialize evidence", e);
         }
 
         byte[] bytes = fo.toByteArray();

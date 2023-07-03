@@ -4,7 +4,7 @@ import eu.ecodex.dc5.message.validation.IncomingBusinessMesssageRules;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "DC5_ECODEX_CONTENT")

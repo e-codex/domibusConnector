@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>eu.domibus.connector</groupId>
@@ -8,30 +9,20 @@
     </parent>
     <artifactId>domibusConnectorAPI</artifactId>
     <name>${project.artifactId}</name>
-    <description>Contains the domibusConnectorAPI which declares the web interfaces and provides the transition model. It also provides the WSDL files for the webinterfaces.</description>
+    <description>Contains the domibusConnectorAPI which declares the web interfaces and provides the transition model.
+        It also provides the WSDL files for the webinterfaces.
+    </description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.xml.ws</groupId>
-            <artifactId>jaxws-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.jws</groupId>
-            <artifactId>javax.jws-api</artifactId>
+            <groupId>jakarta.xml.ws</groupId>
+            <artifactId>jakarta.xml.ws-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
@@ -71,7 +62,8 @@
                             <dir>src/main/resources/wsdl/eu.domibus.connector.domain.transition</dir>
                             <stylesheet>src/xs3p/xs3p.xsl</stylesheet>
                             <fileMappers>
-                                <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+                                <fileMapper
+                                        implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
                                     <targetExtension>.html</targetExtension>
                                 </fileMapper>
                             </fileMappers>
@@ -96,11 +88,14 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>src/main/resources/wsdl/DomibusConnectorGatewayDeliveryWebService.wsdl</wsdl>
-                                    <wsdlLocation>classpath:wsdl/DomibusConnectorGatewayDeliveryWebService.wsdl</wsdlLocation>
+                                    <wsdlLocation>classpath:wsdl/DomibusConnectorGatewayDeliveryWebService.wsdl
+                                    </wsdlLocation>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>src/main/resources/wsdl/DomibusConnectorGatewaySubmissionWebService.wsdl</wsdl>
-                                    <wsdlLocation>classpath:wsdl/DomibusConnectorGatewaySubmissionWebService.wsdl</wsdlLocation>
+                                    <wsdl>src/main/resources/wsdl/DomibusConnectorGatewaySubmissionWebService.wsdl
+                                    </wsdl>
+                                    <wsdlLocation>classpath:wsdl/DomibusConnectorGatewaySubmissionWebService.wsdl
+                                    </wsdlLocation>
                                 </wsdlOption>
                                 <wsdlOption>
                                     <wsdl>src/main/resources/wsdl/DomibusConnectorGatewayWebService.wsdl</wsdl>
@@ -108,15 +103,20 @@
                                 </wsdlOption>
                                 <wsdlOption>
                                     <wsdl>src/main/resources/wsdl/DomibusConnectorBackendDeliveryWebService.wsdl</wsdl>
-                                    <wsdlLocation>classpath:wsdl/DomibusConnectorBackendDeliveryWebService.wsdl</wsdlLocation>
+                                    <wsdlLocation>classpath:wsdl/DomibusConnectorBackendDeliveryWebService.wsdl
+                                    </wsdlLocation>
                                 </wsdlOption>
                                 <wsdlOption>
                                     <wsdl>src/main/resources/wsdl/DomibusConnectorBackendWebService.wsdl</wsdl>
                                     <wsdlLocation>classpath:wsdl/DomibusConnectorBackendWebService.wsdl</wsdlLocation>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>src/main/resources/wsdl/DomibusConnectorGatewayDeliverySubmitAsyncService.wsdl</wsdl>
-                                    <wsdlLocation>classpath:wsdl/DomibusConnectorGatewayDeliverySubmitAsyncService.wsdl</wsdlLocation>
+                                    <wsdl>
+                                        src/main/resources/wsdl/DomibusConnectorGatewayDeliverySubmitAsyncService.wsdl
+                                    </wsdl>
+                                    <wsdlLocation>
+                                        classpath:wsdl/DomibusConnectorGatewayDeliverySubmitAsyncService.wsdl
+                                    </wsdlLocation>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>

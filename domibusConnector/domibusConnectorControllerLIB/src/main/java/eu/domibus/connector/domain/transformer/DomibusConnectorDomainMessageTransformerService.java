@@ -24,8 +24,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.MimeTypeUtils;
 import org.springframework.util.StreamUtils;
 
-import javax.activation.DataHandler;
-import javax.validation.constraints.NotNull;
+import jakarta.activation.DataHandler;
+import jakarta.validation.constraints.NotNull;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import java.io.ByteArrayInputStream;

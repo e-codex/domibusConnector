@@ -5,8 +5,8 @@ import com.vaadin.flow.data.binder.ValueContext;
 import com.vaadin.flow.internal.BeanUtil;
 import com.vaadin.flow.data.binder.Validator;
 
-import javax.validation.*;
-import javax.validation.metadata.ConstraintDescriptor;
+import jakarta.validation.*;
+import jakarta.validation.metadata.ConstraintDescriptor;
 import java.io.Serializable;
 import java.util.Locale;
 import java.util.Objects;

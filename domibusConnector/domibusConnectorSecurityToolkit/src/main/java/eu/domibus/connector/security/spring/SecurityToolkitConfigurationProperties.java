@@ -15,10 +15,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
 import javax.annotation.PostConstruct;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import java.io.IOException;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * contains security toolkit related configuration in a

@@ -10,7 +10,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import javax.validation.Validator;
+import jakarta.validation.Validator;
 import java.util.Random;
 import java.util.stream.IntStream;
 

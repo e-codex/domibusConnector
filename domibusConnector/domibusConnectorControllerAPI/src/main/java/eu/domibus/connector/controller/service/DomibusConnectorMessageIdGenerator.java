@@ -3,7 +3,7 @@ package eu.domibus.connector.controller.service;
 
 import eu.ecodex.dc5.message.model.DC5MessageId;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Service for generating a for the connector unique message id

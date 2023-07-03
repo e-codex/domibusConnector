@@ -27,7 +27,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 
 import org.etsi.uri._02640.v2.ObjectFactory;
 import org.etsi.uri._02640.v2.REMEvidenceType;

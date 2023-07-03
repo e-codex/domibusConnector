@@ -1,7 +1,6 @@
 package eu.spocseu.edeliverygw;
 
 import javax.xml.namespace.QName;
-import javax.xml.soap.SOAPConstants;
 
 import org.etsi.uri._02640.v2.EventReasonsType;
 
@@ -11,44 +10,38 @@ public enum REMErrorEvent
 {
 	SOAP_FAULT(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
-			"http:uri.etsi.org/REM/EventReason#TechnicalMalfunction", null,
-			SOAPConstants.SOAP_RECEIVER_FAULT),
+			"http:uri.etsi.org/REM/EventReason#TechnicalMalfunction", null),
 	SAML_TOKEN_VALIDATION(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
-			"http:uri.etsi.org/REM/EventReason#PolicyViolation", null,
-			SOAPConstants.SOAP_SENDER_FAULT),
+			"http:uri.etsi.org/REM/EventReason#PolicyViolation", null),
 	WS_ADDRESSING_FAULT(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
 			"http:uri.etsi.org/REM/EventReason#PolicyViolation",
-			"Invalid action URI", SOAPConstants.SOAP_SENDER_FAULT),
+			"Invalid action URI"),
 	UNKNOWN_ORIGINATOR_ADDRESS(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
 			"http:uri.etsi.org/REM/EventReason#R_REMMD_NotIdentified",
-			"Originator not known", SOAPConstants.SOAP_SENDER_FAULT),
+			"Originator not known"),
 	UNKNOWN_RECIPIENT_ADDRESS(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
 			"http:uri.etsi.org/REM/EventReason#UnknownRecipient",
-			"Recipient not known", SOAPConstants.SOAP_SENDER_FAULT),
+			"Recipient not known"),
 	UNSPECIFIC_PROCESSING_ERROR(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
-			"http:uri.etsi.org/REM/EventReason#TechnicalMalfunction", null,
-			SOAPConstants.SOAP_RECEIVER_FAULT),
+			"http:uri.etsi.org/REM/EventReason#TechnicalMalfunction", null
+			),
 	WRONG_INPUT_DATA(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
-			"http:uri.etsi.org/REM/EventReason#InvalidMessageFormat", null,
-			SOAPConstants.SOAP_SENDER_FAULT),
+			"http:uri.etsi.org/REM/EventReason#InvalidMessageFormat", null),
 	DUPLICATE_MSG_ID(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
-			"http:uri.eu-spocs.eu/edelivery/v1#DuplicateMsgID", null,
-			SOAPConstants.SOAP_SENDER_FAULT),
+			"http:uri.eu-spocs.eu/edelivery/v1#DuplicateMsgID", null),
 	OTHER(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
-			"http:uri.etsi.org/REM/EventReason#Other", null,
-			SOAPConstants.SOAP_RECEIVER_FAULT),
+			"http:uri.etsi.org/REM/EventReason#Other", null),
 	UNREACHABLE(
 			Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION,
-			"http:uri.etsi.org/REM/EventReason#R_REMMD_Unreachable", null,
-			SOAPConstants.SOAP_SENDER_FAULT);
+			"http:uri.etsi.org/REM/EventReason#R_REMMD_Unreachable", null);
 
 	// SOAP_FAULT(
 	// Evidences.RELAY_REM_MD_ACCEPTANCE_REJECTION, "SoapFaultException",
@@ -82,7 +75,7 @@ public enum REMErrorEvent
 	private QName actor;
 
 	private REMErrorEvent(Evidences _evidence, String _eventCode,
-			String _eventDetails, QName actor)
+			String _eventDetails)
 	{
 
 		evidence = _evidence;

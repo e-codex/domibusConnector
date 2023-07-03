@@ -28,8 +28,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import javax.xml.bind.JAXBException;
-import javax.xml.datatype.DatatypeConfigurationException;
+import jakarta.xml.bind.JAXBException;
+
 
 import org.etsi.uri._02231.v2_.ElectronicAddressType;
 import org.etsi.uri._02640.v2.AttributedElectronicAddressType;
@@ -51,6 +51,8 @@ import eu.spocseu.common.SpocsConstants.Evidences;
 import eu.spocseu.edeliverygw.REMErrorEvent;
 import eu.spocseu.edeliverygw.configuration.EDeliveryDetails;
 import eu.spocseu.edeliverygw.messageparts.SpocsFragments;
+
+import javax.xml.datatype.DatatypeConfigurationException;
 
 /**
  * Internal class

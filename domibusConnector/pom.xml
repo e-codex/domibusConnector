@@ -58,8 +58,8 @@
     <!-- Shared version number properties -->
     <properties>
         <maven.build.timestamp.format>yyyyMMdd-HHmmssSSS</maven.build.timestamp.format>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <tomcat.version>8.5.32</tomcat.version>
@@ -105,7 +105,7 @@
         <!-- always update with cxf -->
 <!--        <org.apache.santuario.xmlsec.version>2.3.2</org.apache.santuario.xmlsec.version>-->
         <!--        <spring.cloud.version>2.2.8.RELEASE</spring.cloud.version>-->
-        <spring.boot.version>3.1</spring.boot.version>
+        <spring.boot.version>3.1.1</spring.boot.version>
         <spring-statemachine.version>3.2.0</spring-statemachine.version>
         <org.moduliths.version>1.3.0</org.moduliths.version>
         <org.junit.jupiter.version>5.8.1</org.junit.jupiter.version>
@@ -121,7 +121,7 @@
         <com.github.database-rider.rider-spring.version>1.10.1</com.github.database-rider.rider-spring.version>
         <javax.xml.bind.jaxb-api.version>2.3.1</javax.xml.bind.jaxb-api.version>
         <com.sun.xml.bind.jaxb-core.version>2.3.0</com.sun.xml.bind.jaxb-core.version>
-        <com.sun.xml.bind.jaxb-impl.version>2.3.0</com.sun.xml.bind.jaxb-impl.version>
+        <com.sun.xml.bind.jaxb-impl.version>3.0.1</com.sun.xml.bind.jaxb-impl.version>
         <com.sun.xml.bind.jaxb-xjc.version>2.3.0</com.sun.xml.bind.jaxb-xjc.version>
         <javax.xml.ws.jaxws-api.version>2.3.1</javax.xml.ws.jaxws-api.version>
 <!--        <jakarta.xml.soap.jakarta.xml.soap-api.version>1.4.2</jakarta.xml.soap.jakarta.xml.soap-api.version>-->
@@ -317,6 +317,23 @@
             </dependency>
             <!-- jaxb -->
             <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>4.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.xml.ws</groupId>
+                <artifactId>jakarta.xml.ws-api</artifactId>
+                <version>4.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.experimental</groupId>
+                <artifactId>spring-modulith-bom</artifactId>
+                <version>0.6.0</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
                 <groupId>javax.xml.bind</groupId>
                 <artifactId>jaxb-api</artifactId>
                 <version>${javax.xml.bind.jaxb-api.version}</version>
@@ -497,26 +514,26 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <dependency>
-                <groupId>org.apache.santuario</groupId>
-                <artifactId>xmlsec</artifactId>
-                <version>${org.apache.santuario.xmlsec.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.woodstox</groupId>
-                <artifactId>woodstox-core</artifactId>
-                <version>${com.fasterxml.woodstox.woodstox-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.wss4j</groupId>
-                <artifactId>wss4j-policy</artifactId>
-                <version>${org.apache.wss4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.wss4j</groupId>
-                <artifactId>wss4j-bindings</artifactId>
-                <version>${org.apache.wss4j.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.apache.santuario</groupId>-->
+<!--                <artifactId>xmlsec</artifactId>-->
+<!--                <version>${org.apache.santuario.xmlsec.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>com.fasterxml.woodstox</groupId>-->
+<!--                <artifactId>woodstox-core</artifactId>-->
+<!--                <version>${com.fasterxml.woodstox.woodstox-core.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.wss4j</groupId>-->
+<!--                <artifactId>wss4j-policy</artifactId>-->
+<!--                <version>${org.apache.wss4j.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.wss4j</groupId>-->
+<!--                <artifactId>wss4j-bindings</artifactId>-->
+<!--                <version>${org.apache.wss4j.version}</version>-->
+<!--            </dependency>-->
             <!-- exclude xmlsec -->
             <!--            <dependency>-->
             <!--                <groupId>org.opensaml</groupId>-->
@@ -771,8 +788,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.7.0</version>
                     <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
+                        <source>17</source>
+                        <target>17</target>
                         <encoding>UTF-8</encoding>
                         <meminitial>1024m</meminitial>
                         <maxmem>2024m</maxmem>

@@ -9,8 +9,8 @@ import java.security.cert.X509Certificate;
 import java.util.List;
 
 import javax.annotation.CheckForNull;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 

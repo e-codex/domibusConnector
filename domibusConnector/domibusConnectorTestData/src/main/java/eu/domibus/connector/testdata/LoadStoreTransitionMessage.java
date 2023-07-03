@@ -10,8 +10,8 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.util.StreamUtils;
 
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
+import jakarta.activation.DataHandler;
+import jakarta.activation.DataSource;
 import javax.annotation.Nullable;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;

@@ -8,7 +8,7 @@ import org.springframework.core.style.ToStringCreator;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Configuration properties for referencing a
