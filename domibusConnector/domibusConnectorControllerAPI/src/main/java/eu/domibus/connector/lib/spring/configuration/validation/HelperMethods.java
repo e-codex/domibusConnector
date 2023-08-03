@@ -1,6 +1,7 @@
 package eu.domibus.connector.lib.spring.configuration.validation;
 
-import eu.domibus.connector.common.service.DCKeyStoreService;
+
+import eu.domibus.connector.keystore.DCKeyStoreService;
 import eu.domibus.connector.lib.spring.configuration.KeyConfigurationProperties;
 import eu.domibus.connector.lib.spring.configuration.StoreConfigurationProperties;
 import org.slf4j.LoggerFactory;

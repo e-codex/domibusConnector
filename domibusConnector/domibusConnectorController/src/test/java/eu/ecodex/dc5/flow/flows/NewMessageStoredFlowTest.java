@@ -3,7 +3,6 @@ package eu.ecodex.dc5.flow.flows;
 import eu.domibus.connector.controller.service.DomibusConnectorMessageIdGenerator;
 import eu.domibus.connector.controller.service.SubmitToLinkService;
 import eu.domibus.connector.domain.testutil.DomainEntityCreator;
-import eu.domibus.connector.security.DomibusConnectorSecurityToolkit;
 import eu.ecodex.dc5.domain.CurrentBusinessDomain;
 import eu.ecodex.dc5.flow.events.NewMessageStoredEvent;
 import eu.ecodex.dc5.flow.steps.VerifyPModesStep;
@@ -38,9 +37,6 @@ class NewMessageStoredFlowTest {
     PlatformTransactionManager txManager;
 
     @MockBean
-    DomibusConnectorSecurityToolkit securityToolkit;
-
-    @MockBean
     DomibusConnectorMessageIdGenerator messageIdGenerator;
 
     @MockBean
@@ -56,8 +52,8 @@ class NewMessageStoredFlowTest {
     }
     @BeforeEach
     public void before() {
-        Mockito.when(securityToolkit.validateContainer(Mockito.any())).thenAnswer(a ->a.getArgument(0));
-        Mockito.when(securityToolkit.buildContainer(Mockito.any())).thenAnswer(a ->a.getArgument(0));
+//        Mockito.when(securityToolkit.validateContainer(Mockito.any())).thenAnswer(a ->a.getArgument(0));
+//        Mockito.when(securityToolkit.buildContainer(Mockito.any())).thenAnswer(a ->a.getArgument(0));
         Mockito.when(messageIdGenerator.generateDomibusConnectorMessageId()).thenReturn(DC5MessageId.ofRandom());
     }
 

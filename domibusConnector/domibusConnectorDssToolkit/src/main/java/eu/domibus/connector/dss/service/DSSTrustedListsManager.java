@@ -1,6 +1,6 @@
 package eu.domibus.connector.dss.service;
 
-import eu.domibus.connector.common.service.DCKeyStoreService;
+import eu.domibus.connector.common.service.DCKeyStoreServiceImpl;
 import eu.domibus.connector.dss.configuration.BasicDssConfigurationProperties;
 import eu.domibus.connector.dss.configuration.TrustListSourceConfigurationProperties;
 import eu.domibus.connector.lib.spring.configuration.StoreConfigurationProperties;
@@ -47,13 +47,13 @@ public class DSSTrustedListsManager {
     private static final Logger LOGGER = LogManager.getLogger(DSSTrustedListsManager.class);
 
     private final BasicDssConfigurationProperties basicDssConfigurationProperties;
-    private final DCKeyStoreService dcKeyStoreService;
+    private final DCKeyStoreServiceImpl dcKeyStoreService;
     private final DataLoader dataLoader;
 
     private Map<String, TrustedListsCertificateSource> trustedListsCertificateSourceMap = new HashMap<>();
 
     public DSSTrustedListsManager(BasicDssConfigurationProperties basicDssConfigurationProperties,
-                                  DCKeyStoreService dcKeyStoreService,
+                                  DCKeyStoreServiceImpl dcKeyStoreService,
                                   @Qualifier(DEFAULT_DATALOADER_BEAN_NAME) DataLoader dataLoader) {
         this.basicDssConfigurationProperties = basicDssConfigurationProperties;
         this.dcKeyStoreService = dcKeyStoreService;

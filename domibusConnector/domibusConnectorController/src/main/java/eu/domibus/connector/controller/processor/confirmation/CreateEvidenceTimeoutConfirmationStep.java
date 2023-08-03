@@ -2,6 +2,7 @@ package eu.domibus.connector.controller.processor.confirmation;
 
 import eu.domibus.connector.controller.exception.DomibusConnectorControllerException;
 import eu.domibus.connector.controller.exception.DomibusConnectorMessageException;
+import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
 import eu.ecodex.dc5.flow.steps.MessageConfirmationStep;
 import eu.ecodex.dc5.flow.steps.SubmitConfirmationAsEvidenceMessageStep;
 import eu.ecodex.dc5.message.ConfirmationCreatorService;
@@ -37,7 +38,7 @@ public class CreateEvidenceTimeoutConfirmationStep {
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     @MDC(name = LoggingMDCPropertyNames.MDC_DC_MESSAGE_PROCESSOR_PROPERTY_NAME, value = "CreateRelayRemmdFailureAndSendIt")
     public void createRelayRemmdFailureAndSendIt(DC5Message originalMessage) throws DomibusConnectorControllerException,
-            DomibusConnectorMessageException {
+            DomibusConnectorMessageException, DomibusConnectorEvidencesToolkitException {
 
         LOGGER.error(LoggingMarker.Log4jMarker.BUSINESS_LOG, "The RelayREMMDAcceptance/Rejection evidence timeout for originalMessage {} timed out. Sending RELAY_REMMD_FAILURE to backend!", originalMessage
                 .getEbmsData().getEbmsMessageId());
@@ -50,7 +51,7 @@ public class CreateEvidenceTimeoutConfirmationStep {
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     @MDC(name = LoggingMDCPropertyNames.MDC_DC_MESSAGE_PROCESSOR_PROPERTY_NAME, value = "CreateNonDeliveryAndSendIt")
     public void createNonDeliveryAndSendIt(DC5Message originalMessage) throws DomibusConnectorControllerException,
-            DomibusConnectorMessageException {
+            DomibusConnectorMessageException, DomibusConnectorEvidencesToolkitException {
 
         LOGGER.error(LoggingMarker.Log4jMarker.BUSINESS_LOG, "The Delivery/NonDelivery evidence timeout for originalMessage {} timed out. Sending NonDelivery to backend!", originalMessage
                 .getEbmsData().getEbmsMessageId());

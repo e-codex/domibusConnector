@@ -7,7 +7,6 @@ import org.springframework.core.io.Resource;
 import org.xml.sax.SAXException;
 
 import jakarta.xml.bind.JAXBException;
-import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -22,7 +21,7 @@ public class ValidConfig_EtsiPolicy {
             return validationPolicy;
         } catch (IOException ioe) {
             throw new RuntimeException("Error while loading resource", ioe);
-        } catch (XMLStreamException | JAXBException | SAXException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Error while parsing EtsiValidationPolicy", e);
         }
     }

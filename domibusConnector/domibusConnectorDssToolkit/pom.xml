@@ -98,5 +98,10 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>eu.domibus.connector</groupId>
+            <artifactId>domibusConnectorSecurityToolkitApi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>

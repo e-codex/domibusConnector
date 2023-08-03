@@ -3,7 +3,6 @@ package eu.ecodex.dc5.flow.flows;
 import eu.domibus.connector.controller.service.SubmitToLinkService;
 import eu.domibus.connector.domain.model.DC5BusinessDomain;
 import eu.domibus.connector.domain.testutil.DomainEntityCreator;
-import eu.domibus.connector.security.DomibusConnectorSecurityToolkit;
 import eu.ecodex.dc5.domain.CurrentBusinessDomain;
 import eu.ecodex.dc5.message.model.*;
 import eu.ecodex.dc5.message.repo.DC5MessageRepo;
@@ -34,8 +33,6 @@ class ProcessIncomingBusinessMessageFlowTest {
     @Autowired
     PlatformTransactionManager txManager;
 
-    @MockBean
-    DomibusConnectorSecurityToolkit securityToolkit;
 
     @MockBean
     SubmitToLinkService submitToLinkService;
@@ -45,11 +42,11 @@ class ProcessIncomingBusinessMessageFlowTest {
 
     @BeforeEach
     public void before() {
-        Mockito.when(securityToolkit.validateContainer(Mockito.any())).thenAnswer(a -> {
-            DC5Message msg = a.getArgument(0);
-            msg.getMessageContent().setBusinessContent(DC5BackendContent.builder().build());
-            return msg;
-        });
+//        Mockito.when(securityToolkit.validateContainer(Mockito.any())).thenAnswer(a -> {
+//            DC5Message msg = a.getArgument(0);
+//            msg.getMessageContent().setBusinessContent(DC5BackendContent.builder().build());
+//            return msg;
+//        });
 //        Mockito.when(securityToolkit.buildContainer(Mockito.any())).thenAnswer(a -> {
 //            DC5Message msg = a.getArgument(0);
 //            msg.getMessageContent().setEcodexContent(DC5EcodexContent.builder().build());

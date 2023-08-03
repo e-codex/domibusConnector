@@ -12,9 +12,9 @@ package eu.ecodex.dss.util;
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.pdf.*;
+import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
-import eu.europa.esig.dss.model.MimeType;
 import eu.europa.esig.dss.spi.DSSUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
@@ -368,7 +368,7 @@ public class PDFUtil {
         }
 
         // and return the result
-        return new InMemoryDocument(targetStream.toByteArray(), filename, MimeType.PDF);
+        return new InMemoryDocument(targetStream.toByteArray(), filename, MimeTypeEnum.PDF);
     }
 
 }

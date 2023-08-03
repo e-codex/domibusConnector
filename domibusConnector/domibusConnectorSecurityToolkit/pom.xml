@@ -11,9 +11,14 @@
     <description>The securityToolkitModule resolves and creates the ASIC-S Container. Its a bridge betweent the
         connector and the securityLib</description>
     <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>eu.domibus.connector</groupId>-->
+<!--            <artifactId>domibusConnectorControllerLIB</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>eu.domibus.connector</groupId>
-            <artifactId>domibusConnectorControllerLIB</artifactId>
+            <artifactId>domibusConnectorSecurityToolkitApi</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

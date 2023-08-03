@@ -1,10 +1,10 @@
 package eu.domibus.connector.evidences.spring;
 
 import eu.domibus.connector.common.annotations.BusinessDomainScoped;
-import eu.domibus.connector.common.service.DCKeyStoreService;
+import eu.domibus.connector.common.service.DCKeyStoreServiceImpl;
+import eu.europa.esig.dss.enumerations.DigestAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,10 +25,10 @@ public class DomibusConnectorEvidencesToolkitContext {
     private static final Logger LOGGER = LoggerFactory.getLogger(DomibusConnectorEvidencesToolkitContext.class);
 
     private final EvidencesToolkitConfigurationProperties evidencesToolkitConfigurationProperties;
-    private final DCKeyStoreService keyStoreService;
+    private final DCKeyStoreServiceImpl keyStoreService;
 
     public DomibusConnectorEvidencesToolkitContext(EvidencesToolkitConfigurationProperties evidencesToolkitConfigurationProperties,
-                                                   DCKeyStoreService keyStoreService) {
+                                                   DCKeyStoreServiceImpl keyStoreService) {
         this.evidencesToolkitConfigurationProperties = evidencesToolkitConfigurationProperties;
         this.keyStoreService = keyStoreService;
     }
@@ -49,7 +49,7 @@ public class DomibusConnectorEvidencesToolkitContext {
     @Bean
     @BusinessDomainScoped
     public HashValueBuilder hashValueBuilder() {
-        return new HashValueBuilder(evidencesToolkitConfigurationProperties.getSignature().getDigestAlgorithm());
+        return new HashValueBuilder(DigestAlgorithm.valueOf(evidencesToolkitConfigurationProperties.getSignature().getDigestAlgorithm()));
     }
 
 

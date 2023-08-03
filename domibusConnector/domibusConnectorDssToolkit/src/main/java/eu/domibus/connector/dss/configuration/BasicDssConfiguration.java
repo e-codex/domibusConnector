@@ -18,6 +18,8 @@ import eu.europa.esig.dss.spi.client.http.DataLoader;
 import eu.europa.esig.dss.spi.client.http.IgnoreDataLoader;
 import eu.europa.esig.dss.spi.x509.tsp.CompositeTSPSource;
 import eu.europa.esig.dss.spi.x509.tsp.TSPSource;
+import lombok.SneakyThrows;
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -43,6 +45,7 @@ public class BasicDssConfiguration {
     public static final String DEFAULT_CRL_SOURCE_BEAN_NAME = "defaultCrlLoader";
     public static final String DEFAULT_TIMESTAMPE_SOURCE_BEAN_NAME = "defaultCompositeTimestampSource";
 
+    @SneakyThrows
     @Bean(name = PROXY_CONFIG_BEAN_NAME)
     public ProxyConfig domibusConnectorProxyConfig(
           BasicDssConfigurationProperties basicDssConfigurationProperties
@@ -51,7 +54,10 @@ public class BasicDssConfiguration {
 
         //HTTPS Proxy
         if (basicDssConfigurationProperties.getHttpsProxy() != null) {
-            proxyConfig.setHttpsProperties(basicDssConfigurationProperties.getHttpsProxy());
+            ProxyProperties proxyProperties = new ProxyProperties();
+            //TODO: replace BeanUtils.copyProperties with explicit code
+            BeanUtils.copyProperties(proxyProperties, basicDssConfigurationProperties.getHttpsProxy());
+            proxyConfig.setHttpsProperties(proxyProperties);
             LOGGER.info(LoggingMarker.Log4jMarker.CONFIG, "Setting DSS https proxy config [{}] from {}.https-proxy.*", basicDssConfigurationProperties.getHttpsProxy(), BasicDssConfigurationProperties.PREFIX);
         } else if (StringUtils.hasText(System.getProperty("https.proxyHost"))) {
             ProxyProperties httpsProxy = new ProxyProperties();
@@ -81,7 +87,10 @@ public class BasicDssConfiguration {
 
         //HTTP Proxy
         if (basicDssConfigurationProperties.getHttpProxy() != null) {
-            proxyConfig.setHttpProperties(basicDssConfigurationProperties.getHttpProxy());
+            ProxyProperties proxyProperties = new ProxyProperties();
+            //TODO: replace BeanUtils.copyProperties with explicit code
+            BeanUtils.copyProperties(proxyProperties, basicDssConfigurationProperties.getHttpsProxy());
+            proxyConfig.setHttpProperties(proxyProperties);
             LOGGER.info(LoggingMarker.Log4jMarker.CONFIG, "Setting DSS http proxy config [{}] from {}.http-proxy.*", basicDssConfigurationProperties.getHttpsProxy(), BasicDssConfigurationProperties.PREFIX);
         } else if (StringUtils.hasText(System.getProperty("http.proxyHost"))) {
             ProxyProperties httpProxy = new ProxyProperties();

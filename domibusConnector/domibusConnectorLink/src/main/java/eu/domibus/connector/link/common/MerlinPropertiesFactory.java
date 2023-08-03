@@ -1,6 +1,5 @@
 package eu.domibus.connector.link.common;
 
-import eu.domibus.connector.common.service.DCKeyStoreService;
 import eu.domibus.connector.lib.spring.configuration.CxfTrustKeyStoreConfigurationProperties;
 import eu.domibus.connector.lib.spring.configuration.KeyAndKeyStoreAndTrustStoreConfigurationProperties;
 import eu.domibus.connector.lib.spring.configuration.StoreConfigurationProperties;

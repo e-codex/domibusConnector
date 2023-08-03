@@ -36,6 +36,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>domibusConnectorEvidencesToolkitAPI</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <scope>test</scope>
@@ -84,6 +89,16 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>domibusConnectorDssToolkit</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.wkp111</groupId>
+            <artifactId>SocketSimple</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.wkp111</groupId>
+            <artifactId>SocketSimple</artifactId>
+            <version>1.0.2</version>
         </dependency>
     </dependencies>
     <build>

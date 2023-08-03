@@ -20,6 +20,8 @@ import eu.ecodex.dss.service.ECodexContainerService;
 import eu.ecodex.dss.service.ECodexLegalValidationService;
 import eu.ecodex.dss.service.ECodexTechnicalValidationService;
 import eu.ecodex.dss.service.impl.dss.*;
+import eu.europa.esig.dss.enumerations.DigestAlgorithm;
+import eu.europa.esig.dss.enumerations.EncryptionAlgorithm;
 import eu.europa.esig.dss.policy.EtsiValidationPolicy;
 import eu.europa.esig.dss.policy.ValidationPolicyFacade;
 import eu.europa.esig.dss.spi.tsl.TrustedListsCertificateSource;
@@ -34,7 +36,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
-import jakarta.xml.bind.JAXBException;
+//import javax.xml.stream.XMLStreamException;
+import javax.xml.bind.JAXBException;
 import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -130,9 +133,10 @@ public class ECodexContainerFactoryService {
 
     private ECodexTechnicalValidationService createDSSAuthenticationBasedValidationService(DC5Message message, DCBusinessDocumentValidationConfigurationProperties.AuthenticationValidationConfigurationProperties config) {
         Objects.requireNonNull(config, "AuthenticationValidationConfigurationProperties is not allowed to be null!");
-        Class<? extends DCAuthenticationBasedTechnicalValidationServiceFactory> authenticatorServiceFactoryClass = config.getAuthenticatorServiceFactoryClass();
-        DCAuthenticationBasedTechnicalValidationServiceFactory bean = applicationContext.getBean(authenticatorServiceFactoryClass);
-        return bean.createTechnicalValidationService(message, config);
+//        Class<? extends DCAuthenticationBasedTechnicalValidationServiceFactory> authenticatorServiceFactoryClass = config.getAuthenticatorServiceFactoryClass();
+//        DCAuthenticationBasedTechnicalValidationServiceFactory bean = applicationContext.getBean(authenticatorServiceFactoryClass);
+//        return bean.createTechnicalValidationService(message, config);
+        return null;
     }
 
     private ECodexTechnicalValidationService createDSSECodexTechnicalValidationService(SignatureValidationConfigurationProperties signatureValidationConfigurationProperties) {
@@ -168,8 +172,12 @@ public class ECodexContainerFactoryService {
             return validationPolicy;
         } catch (IOException ioe) {
             throw new RuntimeException("Error while loading resource", ioe);
-        } catch (XMLStreamException | JAXBException | SAXException e) {
+        } catch (SAXException e) {
             throw new RuntimeException("Error while parsing EtsiValidationPolicy", e);
+        } catch (XMLStreamException e) {
+            throw new RuntimeException(e);
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -244,10 +252,10 @@ public class ECodexContainerFactoryService {
             signatureParameters.setSignatureTokenConnection(signatureConnectionFromStore.getSignatureTokenConnection());
 
             Objects.requireNonNull(signatureConfig.getDigestAlgorithm());
-            signatureParameters.setDigestAlgorithm(signatureConfig.getDigestAlgorithm());
+            signatureParameters.setDigestAlgorithm(DigestAlgorithm.forName(signatureConfig.getDigestAlgorithm()));
 
             Objects.requireNonNull(signatureConfig.getEncryptionAlgorithm());
-            signatureParameters.setEncryptionAlgorithm(signatureConfig.getEncryptionAlgorithm());
+            signatureParameters.setEncryptionAlgorithm(EncryptionAlgorithm.forName(signatureConfig.getEncryptionAlgorithm()));
 
             return signatureParameters;
         } catch (Exception e) {

@@ -6,6 +6,7 @@ import eu.domibus.connector.domain.enums.DomibusConnectorEvidenceType;
 import eu.domibus.connector.domain.enums.DomibusConnectorRejectionReason;
 import eu.domibus.connector.domain.enums.MessageTargetSource;
 import eu.domibus.connector.domain.enums.TransportState;
+import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
 import eu.ecodex.dc5.domain.CurrentBusinessDomain;
 import eu.ecodex.dc5.events.DC5EventListener;
 import eu.ecodex.dc5.flow.common.SubmitConfirmationMsg;
@@ -141,10 +142,15 @@ public class TransportMessageFlow {
                 if (MessageModelHelper.isIncomingBusinessMessage(transportedMessage)) {
                     //message failed to be transported to backend
 
-                    DC5Confirmation nonDelivery = confirmationCreatorService.createConfirmation(DomibusConnectorEvidenceType.NON_DELIVERY,
-                            transportedMessage,
-                            DomibusConnectorRejectionReason.BACKEND_REJECTION,
-                            "");
+                    DC5Confirmation nonDelivery = null;
+                    try {
+                        nonDelivery = confirmationCreatorService.createConfirmation(DomibusConnectorEvidenceType.NON_DELIVERY,
+                                transportedMessage,
+                                DomibusConnectorRejectionReason.BACKEND_REJECTION,
+                                "");
+                    } catch (DomibusConnectorEvidencesToolkitException e) {
+                        throw new RuntimeException(e); //TODO...
+                    }
 
                     submitConfirmationMsg(transportedMessage, nonDelivery);
                 }

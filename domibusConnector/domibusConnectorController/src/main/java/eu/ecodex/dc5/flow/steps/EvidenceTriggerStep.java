@@ -4,6 +4,7 @@ import eu.domibus.connector.controller.exception.DomibusConnectorMessageExceptio
 import eu.domibus.connector.domain.enums.DomibusConnectorEvidenceType;
 import eu.domibus.connector.domain.enums.DomibusConnectorMessageDirection;
 import eu.domibus.connector.domain.enums.DomibusConnectorRejectionReason;
+import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
 import eu.domibus.connector.tools.logging.LoggingMarker;
 import eu.ecodex.dc5.flow.api.Step;
 import eu.ecodex.dc5.message.ConfirmationCreatorService;
@@ -55,7 +56,11 @@ public class EvidenceTriggerStep {
             DomibusConnectorEvidenceType evidenceType = getEvidenceType(evidenceTriggerMsg);
 
             //create evidence
-            confirmation = confirmationCreatorService.createConfirmation(evidenceType, businessMsg, DomibusConnectorRejectionReason.OTHER, "");
+            try {
+                confirmation = confirmationCreatorService.createConfirmation(evidenceType, businessMsg, DomibusConnectorRejectionReason.OTHER, "");
+            } catch (DomibusConnectorEvidencesToolkitException e) {
+                throw new RuntimeException(e); //TODO
+            }
             LOGGER.info(LoggingMarker.Log4jMarker.BUSINESS_LOG, "Successfully created evidence [{}] for evidence trigger", evidenceType);
 
             //set generated evidence into the trigger message

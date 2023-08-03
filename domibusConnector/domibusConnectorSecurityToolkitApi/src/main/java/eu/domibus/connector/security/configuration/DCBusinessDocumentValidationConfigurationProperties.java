@@ -6,8 +6,8 @@ import eu.domibus.connector.common.annotations.MapNested;
 import eu.domibus.connector.common.annotations.UseConverter;
 import eu.domibus.connector.domain.enums.AdvancedElectronicSystemType;
 import eu.domibus.connector.dss.configuration.SignatureValidationConfigurationProperties;
-import eu.domibus.connector.security.aes.DCAuthenticationBasedTechnicalValidationServiceFactory;
-import eu.domibus.connector.security.aes.OriginalSenderBasedAESAuthenticationServiceFactory;
+//import eu.domibus.connector.security.aes.DCAuthenticationBasedTechnicalValidationServiceFactory;
+//import eu.domibus.connector.security.aes.OriginalSenderBasedAESAuthenticationServiceFactory;
 import eu.domibus.connector.security.configuration.validation.CheckAllowedAdvancedElectronicSystemType;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -158,9 +158,9 @@ public class DCBusinessDocumentValidationConfigurationProperties {
         @NotBlank
         private String identityProvider;
 
-        @NotNull
-        @UseConverter
-        private Class<? extends DCAuthenticationBasedTechnicalValidationServiceFactory> authenticatorServiceFactoryClass = OriginalSenderBasedAESAuthenticationServiceFactory.class;
+//        @NotNull
+//        @UseConverter
+//        private Class<? extends DCAuthenticationBasedTechnicalValidationServiceFactory> authenticatorServiceFactoryClass = OriginalSenderBasedAESAuthenticationServiceFactory.class;
 
         @NotNull
         private Map<String, String> properties = new HashMap<>();
@@ -173,13 +173,13 @@ public class DCBusinessDocumentValidationConfigurationProperties {
             this.identityProvider = identityProvider;
         }
 
-        public Class<? extends DCAuthenticationBasedTechnicalValidationServiceFactory> getAuthenticatorServiceFactoryClass() {
-            return authenticatorServiceFactoryClass;
-        }
-
-        public void setAuthenticatorServiceFactoryClass(Class<? extends DCAuthenticationBasedTechnicalValidationServiceFactory> authenticatorServiceFactoryClass) {
-            this.authenticatorServiceFactoryClass = authenticatorServiceFactoryClass;
-        }
+//        public Class<? extends DCAuthenticationBasedTechnicalValidationServiceFactory> getAuthenticatorServiceFactoryClass() {
+//            return authenticatorServiceFactoryClass;
+//        }
+//
+//        public void setAuthenticatorServiceFactoryClass(Class<? extends DCAuthenticationBasedTechnicalValidationServiceFactory> authenticatorServiceFactoryClass) {
+//            this.authenticatorServiceFactoryClass = authenticatorServiceFactoryClass;
+//        }
 
         public Map<String, String> getProperties() {
             return properties;

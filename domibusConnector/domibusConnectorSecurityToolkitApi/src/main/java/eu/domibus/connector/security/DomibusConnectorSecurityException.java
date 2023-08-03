@@ -1,4 +1,4 @@
-package eu.domibus.connector.security.exception;
+package eu.domibus.connector.security;
 
 public class DomibusConnectorSecurityException extends RuntimeException {
 

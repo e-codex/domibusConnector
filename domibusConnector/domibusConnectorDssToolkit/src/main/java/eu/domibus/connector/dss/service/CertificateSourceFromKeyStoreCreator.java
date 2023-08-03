@@ -1,6 +1,6 @@
 package eu.domibus.connector.dss.service;
 
-import eu.domibus.connector.common.service.DCKeyStoreService;
+import eu.domibus.connector.common.service.DCKeyStoreServiceImpl;
 import eu.domibus.connector.lib.spring.configuration.KeyAndKeyStoreConfigurationProperties;
 import eu.domibus.connector.lib.spring.configuration.StoreConfigurationProperties;
 import eu.domibus.connector.tools.logging.LoggingUtils;
@@ -24,9 +24,9 @@ public class CertificateSourceFromKeyStoreCreator {
 
     private static final Logger LOGGER = LogManager.getLogger(CertificateSourceFromKeyStoreCreator.class);
 
-    private final DCKeyStoreService dcKeyStoreService;
+    private final DCKeyStoreServiceImpl dcKeyStoreService;
 
-    public CertificateSourceFromKeyStoreCreator(DCKeyStoreService dcKeyStoreService) {
+    public CertificateSourceFromKeyStoreCreator(DCKeyStoreServiceImpl dcKeyStoreService) {
         this.dcKeyStoreService = dcKeyStoreService;
     }
 

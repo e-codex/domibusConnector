@@ -5,10 +5,11 @@ import eu.domibus.connector.domain.enums.DomibusConnectorEvidenceType;
 import eu.domibus.connector.domain.enums.DomibusConnectorRejectionReason;
 import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
 import eu.ecodex.evidences.types.ECodexMessageDetails;
+import jakarta.annotation.Nonnull;
 import lombok.Builder;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.lang.NonNull;
+
 
 import javax.annotation.CheckForNull;
 import java.util.List;
@@ -28,9 +29,9 @@ public interface DomibusConnectorEvidencesToolkit {
 	@Getter
 	@Builder(toBuilder = true)
 	class HashValue {
-		@NonNull
+		@Nonnull
 		String hash;
-		@NonNull
+		@Nonnull
 		String algorithm;
 	}
 
@@ -47,11 +48,11 @@ public interface DomibusConnectorEvidencesToolkit {
 	@Getter
 	class MessageParameters {
 
-		@NonNull private final String senderAddress;
-		@NonNull private final String recipientAddress;
-		@NonNull private final String nationalMessageId;
-		@NonNull private final String ebmsMessageId;
-		@NonNull private final List<Evidence> relatedEvidences;
+		@lombok.NonNull private final String senderAddress;
+		@lombok.NonNull private final String recipientAddress;
+		@lombok.NonNull private final String nationalMessageId;
+		@lombok.NonNull private final String ebmsMessageId;
+		@lombok.NonNull private final List<Evidence> relatedEvidences;
 
 		@CheckForNull
 		private final DomibusConnectorEvidencesToolkit.HashValue businessDocumentHash;

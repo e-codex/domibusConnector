@@ -14,9 +14,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.util.SystemPropertyUtils;
 
-import javax.annotation.Nullable;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import jakarta.annotation.Nullable;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,6 +1,7 @@
 package eu.domibus.connector.controller.processor.confirmation;
 
 import eu.domibus.connector.controller.exception.ErrorCode;
+import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
 import eu.ecodex.dc5.domain.CurrentBusinessDomain;
 import eu.domibus.connector.controller.exception.DomibusConnectorControllerException;
 import eu.domibus.connector.controller.exception.DomibusConnectorMessageException;
@@ -10,7 +11,7 @@ import eu.ecodex.dc5.message.model.DC5Ebms;
 import eu.domibus.connector.tools.LoggingMDCPropertyNames;
 import eu.domibus.connector.tools.logging.LoggingMarker;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang3.NotImplementedException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -77,6 +78,8 @@ public class CheckEvidencesTimeoutProcessorImpl implements CheckEvidencesTimeout
                 } catch (DomibusConnectorMessageException e) {
                     //throw new DomibusConnectorControllerException(e);
                     LOGGER.error("Exception occured while checking relayREMMDTimeout", e);
+                } catch (DomibusConnectorEvidencesToolkitException e) {
+                    LOGGER.error("Exception occured while checking relayREMMDTimeout", e);
                 }
                 return;
             }
@@ -112,6 +115,8 @@ public class CheckEvidencesTimeoutProcessorImpl implements CheckEvidencesTimeout
                     LOGGER.warn(LoggingMarker.Log4jMarker.BUSINESS_LOG, "Message [{}] reached Delivery confirmation timeout. A NonDelivery evidence has been generated and sent.", message.getConnectorMessageIdAsString());
                 } catch (DomibusConnectorMessageException e) {
                     throw new DomibusConnectorControllerException(ErrorCode.DELIVERY_TIMEOUT_REACHED, e);
+                } catch (DomibusConnectorEvidencesToolkitException e) {
+                    throw new DomibusConnectorControllerException(ErrorCode.EVIDENCE_FAILURE, e);
                 }
                 return;
             }

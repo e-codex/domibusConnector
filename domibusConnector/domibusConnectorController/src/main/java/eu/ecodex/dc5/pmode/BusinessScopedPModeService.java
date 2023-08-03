@@ -15,12 +15,12 @@ import org.xml.sax.SAXException;
 
 import javax.annotation.PostConstruct;
 import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import jakarta.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -202,7 +202,7 @@ public class BusinessScopedPModeService {
 
             JAXBElement<T> jaxbElement = unmarshaller.unmarshal(document, instantiationClazz);
             return jaxbElement.getValue();
-        } catch (JAXBException | SAXException | IOException | ParserConfigurationException e) {
+        } catch (JAXBException | SAXException | IOException e) {
             throw new Exception("Exception parsing byte[] to " + instantiationClazz.getName(), e);
         }
 

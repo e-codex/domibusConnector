@@ -3,12 +3,12 @@ package eu.domibus.connector.lib.spring.configuration;
 import eu.ecodex.utils.configuration.api.annotation.ConfigurationLabel;
 import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.Level;
-import org.hibernate.validator.constraints.Length;
 import org.springframework.core.style.ToStringCreator;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 /**
  * Configuration properties for referencing a
@@ -30,7 +30,7 @@ public class KeyConfigurationProperties {
      */
     @ConfigurationLabel("Alias of certificate or key")
     @NotNull(message = "an alias must be provided!")
-    @Length(min = 1, message = "Alias must have at least one character!")
+    @Size(min = 1, message = "Alias must have at least one character!")
     String alias;
 
     /**

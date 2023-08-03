@@ -23,6 +23,9 @@ import eu.domibus.connector.ws.backend.webservice.ListPendingMessageIdsResponse;
 import eu.domibus.connectorplugins.link.wsbackendplugin.WsBackendPluginActiveLinkPartner;
 import eu.ecodex.dc5.message.model.DC5Message;
 import eu.ecodex.dc5.message.model.DC5MessageId;
+import jakarta.annotation.Resource;
+import jakarta.xml.ws.WebServiceContext;
+import jakarta.xml.ws.handler.MessageContext;
 import org.apache.cxf.interceptor.Fault;
 import org.apache.cxf.jaxws.context.WrappedMessageContext;
 import org.apache.cxf.message.Message;
@@ -35,9 +38,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
-import javax.xml.ws.WebServiceContext;
-import javax.xml.ws.handler.MessageContext;
+
 import java.security.Principal;
 import java.util.List;
 import java.util.Objects;

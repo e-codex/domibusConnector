@@ -1,5 +1,6 @@
 package eu.domibus.connector.controller.processor;
 
+import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
 import eu.ecodex.dc5.domain.CurrentBusinessDomain;
 import eu.ecodex.dc5.flow.steps.MessageConfirmationStep;
 import eu.ecodex.dc5.message.ConfirmationCreatorService;
@@ -65,7 +66,7 @@ public class EvidenceMessageProcessorTest {
 
     @Test
     @Timeout(30)
-    public void testDeliverTrigger() throws InterruptedException {
+    public void testDeliverTrigger() throws InterruptedException, DomibusConnectorEvidencesToolkitException {
         EbmsMessageId EBMSID = EbmsMessageId.ofString("testDeliverTrigger_1");
 
         //send trigger to evidenceMessageProcessor...
@@ -124,7 +125,7 @@ public class EvidenceMessageProcessorTest {
 
     @Test
     @Timeout(30)
-    public void testDeliverTrigger_evidenceShouldBeSentBack() throws InterruptedException {
+    public void testDeliverTrigger_evidenceShouldBeSentBack() throws InterruptedException, DomibusConnectorEvidencesToolkitException {
         EbmsMessageId EBMSID = EbmsMessageId.ofString("testDeliverTrigger_evidenceShouldBeSentBack_1");
 
         DC5BusinessDomain.BusinessDomainId domain = DC5BusinessDomain.BusinessDomainId.of("lane1");

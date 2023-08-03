@@ -1,6 +1,6 @@
 package eu.domibus.connector.evidences.exception;
 
-public class DomibusConnectorEvidencesToolkitException extends RuntimeException {
+public class DomibusConnectorEvidencesToolkitException extends Exception {
 
 	/**
      * 

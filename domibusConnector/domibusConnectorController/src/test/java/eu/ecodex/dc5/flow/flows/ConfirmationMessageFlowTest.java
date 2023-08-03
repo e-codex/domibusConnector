@@ -3,7 +3,6 @@ package eu.ecodex.dc5.flow.flows;
 import eu.domibus.connector.controller.service.SubmitToLinkService;
 import eu.domibus.connector.domain.model.DC5BusinessDomain;
 import eu.domibus.connector.domain.testutil.DomainEntityCreator;
-import eu.domibus.connector.security.DomibusConnectorSecurityToolkit;
 import eu.ecodex.dc5.domain.CurrentBusinessDomain;
 import eu.ecodex.dc5.message.model.DC5BusinessMessageState;
 import eu.ecodex.dc5.message.model.DC5Message;
@@ -33,8 +32,6 @@ class ConfirmationMessageFlowTest {
     @Autowired
     PlatformTransactionManager txManager;
 
-    @MockBean
-    DomibusConnectorSecurityToolkit securityToolkit;
 
     @MockBean
     SubmitToLinkService submitToLinkService;

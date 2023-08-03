@@ -5,6 +5,7 @@ import eu.domibus.connector.domain.enums.DomibusConnectorRejectionReason;
 import eu.domibus.connector.domain.enums.MessageTargetSource;
 import eu.domibus.connector.evidences.DomibusConnectorEvidencesToolkit;
 import eu.domibus.connector.lib.logging.MDC;
+import eu.domibus.connector.security.DomibusConnectorSecurityException;
 import eu.domibus.connector.tools.LoggingMDCPropertyNames;
 import eu.domibus.connector.tools.logging.LoggingMarker;
 import eu.ecodex.dc5.flow.api.StepFailedException;
@@ -26,7 +27,6 @@ import eu.domibus.connector.controller.exception.DomibusConnectorMessageExceptio
 import eu.domibus.connector.controller.exception.DomibusConnectorMessageExceptionBuilder;
 import eu.domibus.connector.domain.enums.DomibusConnectorEvidenceType;
 import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
-import eu.domibus.connector.security.exception.DomibusConnectorSecurityException;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
@@ -84,13 +84,12 @@ public class ProcessIncomingBusinessMessageFlow {
 			eventPublisher.publishEvent(messageReadyForTransportEvent); //publish transport request
 
 		} catch (StepFailedException stepFailedException) {
-			//DomibusConnectorSecurityException
 			if (stepFailedException.getCause() instanceof DomibusConnectorSecurityException) {
 				DomibusConnectorSecurityException e = (DomibusConnectorSecurityException) stepFailedException.getCause();
 				LOGGER.warn("Security Exception occured! Responding with RelayRemmdRejection ConfirmationMessage", e);
 				DC5Confirmation negativeEvidence = createRelayREMMDEvidence(incomingMessage, false, e);    //create rejection...
 				messageConfirmationStep.processConfirmationForMessage(incomingMessage, negativeEvidence);
-				//respond with negative evidence...
+//				respond with negative evidence...
 				submitAsEvidenceMessageToLink.submitOppositeDirection(null, incomingMessage, negativeEvidence);
 				LOGGER.warn(LoggingMarker.BUSINESS_LOG, "Rejected processed incoming Business Message with EBMS ID [{}] from GW to Backend Link [{}] due security exception",
 						incomingMessage.getEbmsData().getEbmsMessageId(),
@@ -133,7 +132,8 @@ public class ProcessIncomingBusinessMessageFlow {
 
 			return 	confirmationCreatorService.createConfirmation(b.build());
 
-		} catch (DomibusConnectorEvidencesToolkitException ex) {
+		}
+		catch (DomibusConnectorEvidencesToolkitException ex) {
 			DomibusConnectorMessageException evidenceBuildFailed = DomibusConnectorMessageExceptionBuilder.createBuilder()
 					.setMessage(originalMessage)
 					.setText("Error creating RelayREMMD evidence for originalMessage!")

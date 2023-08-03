@@ -65,6 +65,16 @@
             <artifactId>ojdbc8</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.wkp111</groupId>
+            <artifactId>SocketSimple</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.wkp111</groupId>
+            <artifactId>SocketSimple</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

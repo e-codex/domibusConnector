@@ -12,6 +12,7 @@ package eu.ecodex.dss.util;
 import java.io.ByteArrayOutputStream;
 import java.util.List;
 
+import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import eu.europa.esig.dss.model.DSSDocument;
 import org.apache.commons.io.IOUtils;
 
@@ -35,7 +36,7 @@ import eu.ecodex.dss.model.token.TokenValidation;
 import eu.ecodex.dss.model.token.ValidationVerification;
 
 import eu.europa.esig.dss.model.InMemoryDocument;
-import eu.europa.esig.dss.model.MimeType;
+
 
 /**
  * This creates the technical summary page of the trustoktoken
@@ -160,7 +161,7 @@ public class PDFGeneratorTechnicalSummary extends AbstractPDFGenerator {
             IOUtils.closeQuietly(output);
         }
 
-        return new InMemoryDocument(output.toByteArray(), "token-summary-technical.pdf", MimeType.PDF);
+        return new InMemoryDocument(output.toByteArray(), "token-summary-technical.pdf", MimeTypeEnum.PDF);
 
     }
 

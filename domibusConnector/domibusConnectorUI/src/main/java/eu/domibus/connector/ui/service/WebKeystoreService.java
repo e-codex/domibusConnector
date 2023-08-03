@@ -13,18 +13,18 @@ import java.util.List;
 
 import java.security.cert.X509Certificate;
 
-import eu.domibus.connector.common.service.DCKeyStoreService;
+import eu.domibus.connector.common.service.DCKeyStoreServiceImpl;
+import eu.domibus.connector.keystore.DCKeyStoreService;
 import eu.domibus.connector.lib.spring.configuration.StoreConfigurationProperties;
 import org.springframework.stereotype.Service;
 
-import eu.domibus.connector.common.service.DCKeyStoreService.CannotLoadKeyStoreException;
 
 @Service("webKeystoreService")
 public class WebKeystoreService {
 
-	private final DCKeyStoreService dcKeyStoreService;
+	private final DCKeyStoreServiceImpl dcKeyStoreService;
 
-	public WebKeystoreService(DCKeyStoreService dcKeyStoreService) {
+	public WebKeystoreService(DCKeyStoreServiceImpl dcKeyStoreService) {
 		this.dcKeyStoreService = dcKeyStoreService;
 	}
 	
@@ -144,9 +144,9 @@ public class WebKeystoreService {
 			keyStore.load(is, pwdArray);
 			return keyStore;
 		} catch (NoSuchAlgorithmException | CertificateException | IOException e) {
-			throw new CannotLoadKeyStoreException(String.format("Cannot load key store!"), e);
+			throw new DCKeyStoreService.CannotLoadKeyStoreException(String.format("Cannot load key store!"), e);
 		} catch (KeyStoreException e) {
-			throw new CannotLoadKeyStoreException(String.format("Cannot load key store!"), e);
+			throw new DCKeyStoreService.CannotLoadKeyStoreException(String.format("Cannot load key store!"), e);
 		}
         
     }

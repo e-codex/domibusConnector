@@ -13,6 +13,7 @@ import eu.domibus.connector.domain.enums.*;
 import eu.domibus.connector.domain.model.DC5BusinessDomain;
 import eu.domibus.connector.domain.model.DomibusConnectorLinkPartner;
 import eu.domibus.connector.domain.testutil.DomainEntityCreator;
+import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
 import eu.domibus.connector.persistence.service.LargeFilePersistenceService;
 import eu.domibus.connector.persistence.testutils.LargeFileMemoryProviderConfiguration;
 import eu.ecodex.dc5.domain.CurrentBusinessDomain;
@@ -1013,7 +1014,12 @@ public class ConnectorMessageFlowITCase {
                         .ebmsMessageId(EbmsMessageId.ofRandom())
                         .action(DC5Action.builder().action("RelayREMMDAcceptanceRejection").build())
                         .build());
-                DC5Confirmation confirmation = confirmationCreatorService.createConfirmation(RELAY_REMMD_ACCEPTANCE, m, null, "");
+                DC5Confirmation confirmation = null;
+                try {
+                    confirmation = confirmationCreatorService.createConfirmation(RELAY_REMMD_ACCEPTANCE, m, null, "");
+                } catch (DomibusConnectorEvidencesToolkitException e) {
+                    throw new RuntimeException(e); //TODO
+                }
                 builder.transportedMessageConfirmation(confirmation);
                 builder.process(DC5MsgProcess.builder().processId(MessageProcessId.ofRandom()).build());
             });
@@ -1145,6 +1151,7 @@ public class ConnectorMessageFlowITCase {
 
     }
 
+    @SneakyThrows
     private void createMessageOnConnector(DC5MessageId CONNECTOR_MESSAGE_ID, BackendMessageId BACKEND_MESSAGE_ID, EbmsMessageId ebmsId) {
         LocalDateTime created = LocalDateTime.now();
 
@@ -1229,12 +1236,17 @@ public class ConnectorMessageFlowITCase {
                                     .build())
                             .build());
             try (CurrentBusinessDomain.CloseAbleBusinessDomain x = CurrentBusinessDomain.setCloseAbleCurrentBusinessDomain(DomainEntityCreator.getEpoBusinessDomain());) {
-                DC5Confirmation deliveryEvidence = confirmationCreatorService.createConfirmation(ConfirmationCreatorService.CreateConfirmationRequest.builder()
-                        .evidenceType(evidenceType)
-                        .reason(DomibusConnectorRejectionReason.OTHER)
-                        .details("some details")
-                        .businessMsg(m)
-                        .build());
+                DC5Confirmation deliveryEvidence = null;
+                try {
+                    deliveryEvidence = confirmationCreatorService.createConfirmation(ConfirmationCreatorService.CreateConfirmationRequest.builder()
+                            .evidenceType(evidenceType)
+                            .reason(DomibusConnectorRejectionReason.OTHER)
+                            .details("some details")
+                            .businessMsg(m)
+                            .build());
+                } catch (DomibusConnectorEvidencesToolkitException e) {
+                    throw new RuntimeException(e); //TODO
+                }
                 deliveryMsgBuilder.transportedMessageConfirmation(deliveryEvidence);
             }
         });

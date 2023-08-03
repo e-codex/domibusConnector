@@ -4,7 +4,7 @@ import eu.domibus.connector.domain.model.LargeFileReference;
 import eu.domibus.connector.persistence.service.LargeFilePersistenceService;
 import eu.europa.esig.dss.model.CommonDocument;
 import eu.europa.esig.dss.model.DSSDocument;
-import eu.europa.esig.dss.model.MimeType;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,9 +30,9 @@ public class LargeFileBasedDssDocument extends CommonDocument implements DSSDocu
         }
     }
 
-    public MimeType getMimeType() {
-        return MimeType.fromMimeTypeString(reference.getContentType());
-    }
+//    public MimeType getMimeType() {
+//        return MimeType.fromMimeTypeString(reference.getContentType());
+//    }
 
     public String getName() {
         return reference.getName();

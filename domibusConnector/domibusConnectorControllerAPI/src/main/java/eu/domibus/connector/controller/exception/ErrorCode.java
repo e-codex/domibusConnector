@@ -7,6 +7,7 @@ public class ErrorCode {
     public static final ErrorCode EVIDENCE_IGNORED_DUE_DUPLICATE = new ErrorCode("E102", "The processed evidence is ignored, because max occurence number of evidence type exceeded");
     public static final ErrorCode EVIDENCE_IGNORED_DUE_HIGHER_PRIORITY = new ErrorCode("E103", "The processed evidence is not relevant due another evidence with higher priority");
     public static final ErrorCode EVIDENCE_IGNORED = new ErrorCode("E104", "Evidence ignored, because it cannot change message state");
+    public static final ErrorCode EVIDENCE_FAILURE = new ErrorCode("E105", "Failure while creating evidence");
 
     public static final ErrorCode LINK_PARTNER_NOT_FOUND = new ErrorCode("L104", "The requested LinkPartner is not configured");
     public static final ErrorCode LINK_PARTNER_NOT_ACTIVE = new ErrorCode("L101", "The requested LinkPartner is not active");
@@ -19,6 +20,7 @@ public class ErrorCode {
     public static final ErrorCode P_MODE_SERVICE_ACTION_LEG_NOT_FOUND = new ErrorCode("P102", "The service action combination is not sufficient found no leg");
 
     public static final ErrorCode OTHER = new ErrorCode("C100", "Unspecified issue");
+
     private final String errorCode;
     private final String description;
 

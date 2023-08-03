@@ -2,7 +2,7 @@ package eu.domibus.connector.dss.service;
 
 import eu.domibus.connector.common.SpringProfiles;
 import eu.domibus.connector.common.configuration.ConnectorConverterAutoConfiguration;
-import eu.domibus.connector.common.service.DCKeyStoreService;
+import eu.domibus.connector.common.service.DCKeyStoreServiceImpl;
 import eu.domibus.connector.dss.configuration.BasicDssConfiguration;
 import eu.ecodex.utils.spring.converter.ConverterAutoConfiguration;
 import org.assertj.core.api.Assertions;
@@ -15,7 +15,7 @@ import org.springframework.test.context.ActiveProfiles;
         DSSTrustedListsManager.class,
         ConverterAutoConfiguration.class,
         ConnectorConverterAutoConfiguration.class,
-        DCKeyStoreService.class
+        DCKeyStoreServiceImpl.class
 },
     properties = "connector.dss.tlCacheLocation=file:./target/tlcache/"
 

@@ -1,5 +1,6 @@
 package eu.ecodex.dc5.flow.flows;
 
+import eu.domibus.connector.controller.exception.DomibusConnectorMessageExceptionBuilder;
 import eu.domibus.connector.controller.processor.DomibusConnectorMessageProcessor;
 import eu.domibus.connector.controller.spring.ConnectorMessageProcessingProperties;
 import eu.domibus.connector.domain.enums.DomibusConnectorEvidenceType;
@@ -70,10 +71,15 @@ public class ProcessOutgoingBusinessMessageFlow implements DomibusConnectorMessa
         if (transportState == TransportState.FAILED) {
 
             //message failed to be transported to gw
-            DC5Confirmation submissionRejection = confirmationCreatorService.createConfirmation(DomibusConnectorEvidenceType.SUBMISSION_REJECTION,
-                    transportedMessage,
-                    DomibusConnectorRejectionReason.GW_REJECTION,
-                    "");
+            DC5Confirmation submissionRejection = null;
+            try {
+                submissionRejection = confirmationCreatorService.createConfirmation(DomibusConnectorEvidenceType.SUBMISSION_REJECTION,
+                        transportedMessage,
+                        DomibusConnectorRejectionReason.GW_REJECTION,
+                        "");
+            } catch (DomibusConnectorEvidencesToolkitException e) {
+                throw new RuntimeException(e); //TODO....
+            }
 
             submitConfirmationMsg(transportedMessage, submissionRejection);
             //submit trigger message...
@@ -137,9 +143,15 @@ public class ProcessOutgoingBusinessMessageFlow implements DomibusConnectorMessa
 
         } catch (StepFailedException secEcx) {
             DomibusConnectorEvidenceType evidenceType = DomibusConnectorEvidenceType.SUBMISSION_REJECTION;
-            LOGGER.error("Could not process message [{}]! Rejecting message with [{}]",  message, evidenceType);
+            LOGGER.error("Could not process message [{}]! Rejecting message with [{}]", message, evidenceType);
 
-            DC5Confirmation submissionRejction = confirmationCreatorService.createConfirmation(evidenceType, message, DomibusConnectorRejectionReason.OTHER, "");
+            DC5Confirmation submissionRejction = null;
+            try {
+                submissionRejction = confirmationCreatorService.createConfirmation(evidenceType, message, DomibusConnectorRejectionReason.OTHER, "");
+            } catch (DomibusConnectorEvidencesToolkitException e) {
+                throw new RuntimeException(e);  //TODO...
+
+            }
             messageConfirmationStep.processConfirmationForMessage(message, submissionRejction);
             submitAsEvidenceMessageToLink.submitOppositeDirection(null, message, submissionRejction);
 
@@ -153,15 +165,20 @@ public class ProcessOutgoingBusinessMessageFlow implements DomibusConnectorMessa
         } catch (DomibusConnectorEvidencesToolkitException ete) {
             LOGGER.error("Could not generate evidence [{}] for originalMessage [{}]!", DomibusConnectorEvidenceType.SUBMISSION_ACCEPTANCE, message);
 
-            DC5Confirmation submissionRejection = confirmationCreatorService.createConfirmation(DomibusConnectorEvidenceType.SUBMISSION_REJECTION, message, DomibusConnectorRejectionReason.OTHER, "");
+            DC5Confirmation submissionRejection = null;
+            try {
+                submissionRejection = confirmationCreatorService.createConfirmation(DomibusConnectorEvidenceType.SUBMISSION_REJECTION, message, DomibusConnectorRejectionReason.OTHER, "");
+            } catch (DomibusConnectorEvidencesToolkitException e) {
+                throw new RuntimeException(e); //TODO....
+            }
             submitAsEvidenceMessageToLink.submitOppositeDirection(null, message, submissionRejection);
 
-//            DomibusConnectorMessageExceptionBuilder.createBuilder()
-//                    .setMessage(message)
-//                    .setText("Could not generate evidence submission acceptance! ")
-//                    .setSource(this.getClass())
-//                    .setCause(ete)
-//                    .buildAndThrow();
+            DomibusConnectorMessageExceptionBuilder.createBuilder()
+                    .setMessage(message)
+                    .setText("Could not generate evidence submission acceptance! ")
+                    .setSource(this.getClass())
+                    .setCause(ete)
+                    .buildAndThrow();
         }
     }
 

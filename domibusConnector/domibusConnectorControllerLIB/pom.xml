@@ -103,5 +103,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.github.wkp111</groupId>
+            <artifactId>SocketSimple</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.wkp111</groupId>
+            <artifactId>SocketSimple</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
 </project>

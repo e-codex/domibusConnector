@@ -8,6 +8,7 @@ import eu.domibus.connector.domain.enums.DomibusConnectorEvidenceType;
 import eu.domibus.connector.domain.enums.DomibusConnectorRejectionReason;
 import eu.domibus.connector.domain.model.*;
 import eu.domibus.connector.evidences.DomibusConnectorEvidencesToolkit;
+import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkitException;
 import eu.ecodex.dc5.message.model.DC5Action;
 import eu.ecodex.dc5.message.model.DC5Message;
 import eu.ecodex.dc5.message.model.DC5Confirmation;
@@ -78,26 +79,26 @@ public class ConfirmationCreatorService {
         }
     }
 
-    public DC5Confirmation createConfirmation(CreateConfirmationRequest request) {
+    public DC5Confirmation createConfirmation(CreateConfirmationRequest request) throws DomibusConnectorEvidencesToolkitException {
         return toDC5Confirmation(evidencesToolkit.createEvidence(request.getEvidenceType(),
                 toMessageParams(request.getBusinessMsg()),
                 request.getReason(),
                 request.getDetails()));
     }
 
-    public DC5Confirmation createConfirmation(DomibusConnectorEvidenceType evidenceType, DC5Message businessMsg, DomibusConnectorRejectionReason reason, String details) {
+    public DC5Confirmation createConfirmation(DomibusConnectorEvidenceType evidenceType, DC5Message businessMsg, DomibusConnectorRejectionReason reason, String details) throws DomibusConnectorEvidencesToolkitException {
         return toDC5Confirmation(evidencesToolkit.createEvidence(evidenceType, toMessageParams(businessMsg), reason, details));
     }
 
-    public DC5Confirmation createNonDelivery(DC5Message originalMessage, DomibusConnectorRejectionReason deliveryEvidenceTimeout) {
+    public DC5Confirmation createNonDelivery(DC5Message originalMessage, DomibusConnectorRejectionReason deliveryEvidenceTimeout) throws DomibusConnectorEvidencesToolkitException {
         return toDC5Confirmation(evidencesToolkit.createEvidence(DomibusConnectorEvidenceType.NON_DELIVERY, toMessageParams(originalMessage), deliveryEvidenceTimeout, deliveryEvidenceTimeout.getReasonText()));
     }
 
-    public DC5Confirmation createNonRetrieval(DC5Message originalMessage, DomibusConnectorRejectionReason deliveryEvidenceTimeout) {
+    public DC5Confirmation createNonRetrieval(DC5Message originalMessage, DomibusConnectorRejectionReason deliveryEvidenceTimeout) throws DomibusConnectorEvidencesToolkitException {
         return toDC5Confirmation(evidencesToolkit.createEvidence(DomibusConnectorEvidenceType.NON_RETRIEVAL, toMessageParams(originalMessage), deliveryEvidenceTimeout, deliveryEvidenceTimeout.getReasonText()));
     }
 
-    public DC5Confirmation createRelayRemmdFailure(DC5Message originalMessage, DomibusConnectorRejectionReason deliveryEvidenceTimeout) {
+    public DC5Confirmation createRelayRemmdFailure(DC5Message originalMessage, DomibusConnectorRejectionReason deliveryEvidenceTimeout) throws DomibusConnectorEvidencesToolkitException {
         return toDC5Confirmation(evidencesToolkit.createEvidence(DomibusConnectorEvidenceType.RELAY_REMMD_FAILURE, toMessageParams(originalMessage), deliveryEvidenceTimeout, deliveryEvidenceTimeout.getReasonText()));
     }
 

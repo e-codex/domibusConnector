@@ -12,6 +12,7 @@ package eu.ecodex.dss.util;
 import java.awt.*;
 import java.io.ByteArrayOutputStream;
 
+import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import org.apache.commons.io.IOUtils;
 
 import com.lowagie.text.DocumentException;
@@ -26,7 +27,7 @@ import eu.ecodex.dss.model.token.LegalTrustLevel;
 import eu.ecodex.dss.model.token.Token;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
-import eu.europa.esig.dss.model.MimeType;
+
 
 /**
  * This creates the legal summary page of the trustoktoken
@@ -77,7 +78,7 @@ public class PDFGeneratorLegalSummary extends AbstractPDFGenerator {
 			IOUtils.closeQuietly(output);
 		}
 
-		return new InMemoryDocument(output.toByteArray(), "token-summary-legal.pdf", MimeType.PDF);
+		return new InMemoryDocument(output.toByteArray(), "token-summary-legal.pdf", MimeTypeEnum.PDF);
 
 	}
 
