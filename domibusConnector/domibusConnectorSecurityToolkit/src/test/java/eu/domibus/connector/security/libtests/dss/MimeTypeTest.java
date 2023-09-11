@@ -24,22 +24,15 @@ public class MimeTypeTest {
         assertThat(mimeType).isEqualTo(MimeTypeEnum.PDF);
         
     }
-    
-//    @Test
-//    public void testFromMimeTypeString_withIllegalMimeType_shouldLogWarning() {
 
-//                String illegalMimeType = "kljdasfhihlaerö";
-//            MimeType mimeType = MimeType.fromMimeTypeString(illegalMimeType);
-//       TODO: check warning
-//    }
     
     @Test
-    public void testFromMimeTypeString_forDssLibUnknwonMimeType_libShouldNotChangeIt() {
+    public void testFromMimeTypeString_forDssLibUnknwonMimeType_libChangesToOctetStream() {
         String unknownMimeType = "application/superduper";
         MimeType mimeType = MimeType.fromMimeTypeString(unknownMimeType);
         MimeType expectedMimeType = MimeTypeEnum.BINARY;
         assertThat(mimeType.getMimeTypeString())                
-                .isEqualTo(unknownMimeType);
+                .isEqualTo(expectedMimeType.getMimeTypeString());
     }
     
     @Test
