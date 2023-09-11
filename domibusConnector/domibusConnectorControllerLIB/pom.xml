@@ -4,7 +4,7 @@
     <parent>
         <groupId>eu.domibus.connector</groupId>
         <artifactId>domibusConnector</artifactId>
-        <version>5.0.1-RC3</version>
+        <version>3.15.0-SNAPSHOT</version>
     </parent>
     <artifactId>domibusConnectorControllerLIB</artifactId>
     <description>Contains common code of all connector modules, like property configuration checkers, helper, ...</description>
@@ -103,15 +103,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.wkp111</groupId>
-            <artifactId>SocketSimple</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.wkp111</groupId>
-            <artifactId>SocketSimple</artifactId>
-            <version>1.0.2</version>
-        </dependency>
+
+
     </dependencies>
 </project>

@@ -23,8 +23,8 @@ See SPOCS_WP3_LICENSE_URL for license information
 --------------------------------------------------------------------------- */
 package eu.spocseu.edeliverygw;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
 /**
  * This class represents a Holder for the adressing, spocs and etsi JAXB

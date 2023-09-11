@@ -4,7 +4,7 @@
     <parent>
         <groupId>eu.domibus.connector</groupId>
         <artifactId>domibusConnector</artifactId>
-        <version>5.0.1-RC3</version>
+        <version>3.15.0-SNAPSHOT</version>
     </parent>
     <artifactId>domibusConnectorController</artifactId>
     <name>${project.artifactId}</name>
@@ -72,11 +72,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
-        <dependency>
-            <groupId>eu.ecodex.connector.utils</groupId>
-            <artifactId>spring-quartz-scheduled</artifactId>
-            <version>0.0.6-RELEASE</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>eu.ecodex.connector.utils</groupId>-->
+<!--            <artifactId>spring-quartz-scheduled</artifactId>-->
+<!--        </dependency>-->
         <!-- JMS -->
         <!--        <dependency>-->
         <!--            <groupId>org.apache.activemq</groupId>-->
@@ -259,19 +258,11 @@
         <dependency>
             <groupId>eu.domibus.connector</groupId>
             <artifactId>domibusConnectorSecurityToolkitApi</artifactId>
-            <version>5.0.1-RC3</version>
+            <version>3.15.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.wkp111</groupId>
-            <artifactId>SocketSimple</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.wkp111</groupId>
-            <artifactId>SocketSimple</artifactId>
-            <version>1.0.2</version>
-        </dependency>
+
+
     </dependencies>
     <build>
         <!-- activate resource filtering to provide the tests with correct properties for the environment

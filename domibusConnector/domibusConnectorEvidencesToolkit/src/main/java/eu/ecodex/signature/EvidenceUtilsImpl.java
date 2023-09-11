@@ -9,6 +9,7 @@ import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 
+import javax.xml.XMLConstants;
 import javax.xml.crypto.MarshalException;
 import javax.xml.crypto.dsig.CanonicalizationMethod;
 import javax.xml.crypto.dsig.DigestMethod;
@@ -109,6 +110,9 @@ public class EvidenceUtilsImpl extends EvidenceUtils {
 			ByteArrayOutputStream bos = new ByteArrayOutputStream();
 
 			TransformerFactory tf = TransformerFactory.newInstance();
+			tf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+			tf.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+			tf.setAttribute(XMLConstants.ACCESS_EXTERNAL_STYLESHEET, "");
 			Transformer trans = tf.newTransformer();
 			trans.transform(new DOMSource(doc), new StreamResult(bos));
 

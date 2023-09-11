@@ -11,7 +11,7 @@ import java.security.cert.X509Certificate;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import jakarta.xml.bind.JAXBException;
+import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -227,6 +227,8 @@ public class ECodexEvidenceBuilder implements EvidenceBuilder {
 
         log.info("Creation of SubmissionAcceptanceRejection Evidence finished in " + (System.currentTimeMillis() - start.getTime()) + " ms.");
 
+
+
         return signedByteArray;
     }
 
@@ -354,7 +356,7 @@ public class ECodexEvidenceBuilder implements EvidenceBuilder {
         return signedByteArray;
     }
 
-    private byte[] signEvidence(Evidence evidenceToBeSigned, boolean removeOldSignature) {
+    private byte[] signEvidence(Evidence evidenceToBeSigned, boolean removeOldSignature) throws ECodexEvidenceBuilderException {
 
         if (removeOldSignature) {
             // delete old signature field
@@ -374,8 +376,16 @@ public class ECodexEvidenceBuilder implements EvidenceBuilder {
 
         byte[] bytes = fo.toByteArray();
 
-        byte[] signedByteArray = signer.signByteArray(bytes);
-
+        byte[] signedByteArray = new byte[0];
+        try {
+            signedByteArray = signer.signByteArray(bytes);
+        } catch (EvidenceUtils.EvidenceSignatureException e) {
+            throw new ECodexEvidenceBuilderException(e);
+        }
+        if (signedByteArray == null) {
+            log.warn("signed byte array is null!");
+            throw new ECodexEvidenceBuilderException("signed byte array is null!");
+        }
         return signedByteArray;
     }
 

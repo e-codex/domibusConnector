@@ -28,7 +28,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import jakarta.xml.bind.JAXBException;
+import javax.xml.bind.JAXBException;
 
 
 import org.etsi.uri._02231.v2_.ElectronicAddressType;

@@ -9,8 +9,8 @@ import java.security.cert.X509Certificate;
 import java.util.List;
 
 import javax.annotation.CheckForNull;
-import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.JAXBException;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -27,6 +27,10 @@ public abstract class EvidenceUtils {
     protected static Logger LOG = Logger.getLogger(EvidenceUtilsImpl.class);
     protected final KeyPairProvider keyPairProvider;
 
+//    public static class EvidenceUtilsResult<Byte[], EvidenceSignatureException> {
+//        private EvidenceSignatureException exc;
+//        private byte[] result;
+//    }
 
     public static interface KeyStoreProvider {
         KeyStore getKeyStore();
@@ -55,9 +59,19 @@ public abstract class EvidenceUtils {
         this.keyPairProvider = keyPairProvider;
     }
 
-    public abstract byte[] signByteArray(byte[] xmlData);
+    public abstract byte[] signByteArray(byte[] xmlData) throws EvidenceSignatureException;
 
-    public abstract boolean verifySignature(byte[] xmlData);
+    public abstract boolean verifySignature(byte[] xmlData) throws EvidenceSignatureException;
+
+    public static class EvidenceSignatureException extends Exception {
+        public EvidenceSignatureException(String msg) {
+            super(msg);
+        }
+
+        public EvidenceSignatureException(String msg, Throwable cause) {
+            super(msg, cause);
+        }
+    }
 
 //    protected synchronized static KeyPair getKeyPairFromKeyStore(Resource store, String storePass, String alias, String keyPass) {
 //        LOG.debug("Loading KeyPair from Java KeyStore(" + store + ")");

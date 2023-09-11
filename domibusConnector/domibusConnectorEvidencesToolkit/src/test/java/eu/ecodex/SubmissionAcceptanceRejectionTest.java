@@ -53,6 +53,7 @@ import eu.spocseu.edeliverygw.messageparts.SpocsFragments;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Log4j2
@@ -245,7 +246,7 @@ public class SubmissionAcceptanceRejectionTest {
 
 
     @Test
-    public void evidenceChain() throws DatatypeConfigurationException, ECodexEvidenceBuilderException, IOException {
+    public void evidenceChain() throws DatatypeConfigurationException, ECodexEvidenceBuilderException, IOException, EvidenceUtils.EvidenceSignatureException {
 
 
         EDeliveryDetails details = createEntityDetailsObject();
@@ -259,6 +260,7 @@ public class SubmissionAcceptanceRejectionTest {
         msgDetails.setSenderAddress("senderAddress");
 
         byte[] subm = builder.createSubmissionAcceptanceRejection(true, (EventReasonType) null, details, msgDetails);
+        assertThat(subm).isNotNull();
 
         writeFile(subm, PATH_OUTPUT_FILES + SUBMISSION_ACCEPTANCE_FILE);
         assertTrue(utils.verifySignature(subm));

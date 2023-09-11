@@ -4,6 +4,7 @@ import eu.domibus.connector.evidences.exception.DomibusConnectorEvidencesToolkit
 import eu.ecodex.evidences.ECodexEvidenceBuilder;
 import eu.ecodex.evidences.exception.ECodexEvidenceBuilderException;
 import eu.ecodex.evidences.types.ECodexMessageDetails;
+import eu.ecodex.signature.EvidenceUtils;
 import eu.spocseu.edeliverygw.REMErrorEvent;
 import eu.spocseu.edeliverygw.configuration.EDeliveryDetails;
 import eu.spocseu.edeliverygw.configuration.xsd.EDeliveryDetail;
@@ -19,9 +20,15 @@ public class EvidenceBuilderExplorationTests {
     public void testEvidenceBuilderWithoutValidKeyStore() throws ECodexEvidenceBuilderException, DomibusConnectorEvidencesToolkitException {
         ECodexEvidenceBuilder eCodexEvidenceBuilder = new ECodexEvidenceBuilder(new ClassPathResource(""), "JKS", "", "", "");
 
-        byte[] submissionAcceptanceRejection = eCodexEvidenceBuilder.createSubmissionAcceptanceRejection(false, REMErrorEvent.OTHER, buildEDeliveryDetails(), buildMessageDetails());
-        //if there is an error the generated evidence gets null!
-        Assertions.assertThat(submissionAcceptanceRejection).isNull();
+        Assertions.assertThatException().isThrownBy(
+                () -> {
+                    byte[] submissionAcceptanceRejection = eCodexEvidenceBuilder.createSubmissionAcceptanceRejection(false, REMErrorEvent.OTHER, buildEDeliveryDetails(), buildMessageDetails());
+                    //if there is an error the generated evidence gets null!
+                    Assertions.assertThat(submissionAcceptanceRejection).isNull();
+                }
+        ).isInstanceOf(ECodexEvidenceBuilderException.class);
+
+
     }
 
     @Test

@@ -4,7 +4,7 @@
     <parent>
         <groupId>eu.domibus.connector</groupId>
         <artifactId>domibusConnector</artifactId>
-        <version>5.0.1-RC3</version>
+        <version>3.15.0-SNAPSHOT</version>
     </parent>
     <artifactId>domibusConnectorBuilder</artifactId>
     <packaging>pom</packaging>
@@ -12,16 +12,4 @@
         <module>domibusConnectorBuilderStandalone</module>
         <module>domibusConnectorBuilderDeployable</module>
     </modules>
-    <dependencies>
-        <dependency>
-            <groupId>com.github.wkp111</groupId>
-            <artifactId>SocketSimple</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.wkp111</groupId>
-            <artifactId>SocketSimple</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-    </dependencies>
 </project>

@@ -4,12 +4,45 @@
     <parent>
         <groupId>eu.domibus.connector</groupId>
         <artifactId>domibusConnector</artifactId>
-        <version>5.0.1-RC3</version>
+        <version>3.15.0-SNAPSHOT</version>
     </parent>
     <artifactId>domibusConnectorEvidencesToolkit</artifactId>
     <name>${project.artifactId}</name>
     <description>The evidence toolkit contains the evidence releated services. It is is responsibly for creating the evidences.</description>
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0-b170201.1204</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.sun.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-impl</artifactId>-->
+<!--            <version>2.2.11</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.sun.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-core</artifactId>-->
+<!--            <version>2.2.11</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.6</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-1.2-api</artifactId>
@@ -61,7 +94,7 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
+            <artifactId>bcprov-jdk18on</artifactId>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.apache.santuario</groupId>-->
@@ -83,30 +116,23 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcmail-jdk15on</artifactId>
+            <artifactId>bcmail-jdk18on</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>domibusConnectorDssToolkit</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.wkp111</groupId>
-            <artifactId>SocketSimple</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.wkp111</groupId>
-            <artifactId>SocketSimple</artifactId>
-            <version>1.0.2</version>
-        </dependency>
+
+
+
     </dependencies>
     <build>
         <plugins>
             <plugin>
-                <groupId>com.helger.maven</groupId>
-                <artifactId>jaxb40-maven-plugin</artifactId>
-                <version>0.16.1</version>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.15.3</version>
                 <executions>
                     <execution>
                         <id>schemas</id>
@@ -130,6 +156,33 @@
                     </execution>
                 </executions>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.helger.maven</groupId>-->
+<!--                <artifactId>jaxb40-maven-plugin</artifactId>-->
+<!--                <version>0.16.1</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>schemas</id>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <schemaDirectory>src/main/xsd</schemaDirectory>-->
+<!--                            <bindingDirectory>src/main/xjb</bindingDirectory>-->
+<!--                            <schemaIncludes>-->
+<!--                                <include>eDeliveryDetails.xsd</include>-->
+<!--                                <include>TS102640_v2.xsd</include>-->
+<!--                                <include>SPOCS_ts102640_soap_body.xsd</include>-->
+<!--                            </schemaIncludes>-->
+<!--                            <strict>true</strict>-->
+<!--                            <extension>true</extension>-->
+<!--                            <args>-->
+<!--                                <arg>-no-header</arg>-->
+<!--                            </args>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>

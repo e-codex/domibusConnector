@@ -5,6 +5,7 @@ package eu.ecodex.signature;
 //import eu.europa.esig.dss.client.http.commons.CommonsDataLoader;
 //import eu.europa.esig.dss.client.http.commons.FileCacheDataLoader;
 
+import eu.ecodex.evidences.exception.ECodexEvidenceBuilderException;
 import eu.europa.esig.dss.enumerations.DigestAlgorithm;
 import eu.europa.esig.dss.enumerations.SignatureLevel;
 import eu.europa.esig.dss.enumerations.SignaturePackaging;
@@ -56,15 +57,14 @@ public class EvidenceUtilsXades extends EvidenceUtils {
 //    }
 
     @Override
-    public byte[] signByteArray(byte[] xmlData) {
+    public byte[] signByteArray(byte[] xmlData) throws EvidenceSignatureException {
 
         byte[] signedData = null;
         try {
             signedData = createAndVerifySignature(xmlData);
         } catch (Exception e) {
-            LOGGER.error("Cannot createAndVerifySignature", e);
+            throw new EvidenceSignatureException("Cannot createAndVerifySignature", e);
         }
-
         return signedData;
     }
 
