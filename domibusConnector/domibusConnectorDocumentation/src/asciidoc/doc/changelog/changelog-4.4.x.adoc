@@ -138,12 +138,12 @@ This is done by loading our class first.
 * mysql => 8.0.32
 
 ==== Notes
-
 * CVE-2022-46363 does not affect the connector because neither of the attributes are set by cxf-spring-boot-starter-jaxws
 
 === 4.4.9
 
 ==== Fixes
+
 
 * Improved Logging im Backend Link JQEUP-1979
 * Retry behaviour changed within Backend Link if push is used JUEUSW-734 (Some errors have not triggered in contrary to the intended behaviour a retry, this is the fix for it)
