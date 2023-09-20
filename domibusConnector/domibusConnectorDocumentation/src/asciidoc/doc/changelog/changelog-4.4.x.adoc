@@ -152,3 +152,8 @@ This is done by loading our class first.
 
 * Vaadin => 14.10.3
 
+=== 4.4.10
+
+==== Fixes
+
+* Fix incomplete build 4.4.9
