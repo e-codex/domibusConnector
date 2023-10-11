@@ -157,3 +157,9 @@ This is done by loading our class first.
 ==== Fixes
 
 * Fix incomplete build 4.4.9
+
+=== 4.4.11
+
+=== Upgrades
+
+* Upgrade DSS Utils to 5.12.1
