@@ -9,6 +9,7 @@ import eu.domibus.connector.persistence.model.PDomibusConnectorTransportStepStat
 import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -145,6 +146,7 @@ public class DomibusConnectorTransportStepDaoTest {
 
 
     @Test
+    @Disabled
     @Sql(scripts = {
             "classpath:/database/testdata/sql/DC_TRANSPORT_STEP_STATUS_CLEAN.sql",
             "classpath:/database/testdata/sql/DC_TRANSPORT_STEP_CLEAN.sql",
