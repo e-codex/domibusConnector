@@ -15,9 +15,11 @@ import eu.ecodex.dss.model.token.AdvancedSystemType;
 import eu.ecodex.dss.model.token.Token;
 import eu.ecodex.dss.service.ECodexContainerService;
 import eu.ecodex.dss.service.ECodexException;
+import eu.europa.esig.dss.enumerations.MimeType;
+import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
-import eu.europa.esig.dss.model.MimeType;
+
 import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -79,7 +81,7 @@ public abstract class ECodexContainerFactoryServiceITCaseTemplate {
         BusinessContent businessContent = new BusinessContent();
 
         //bytes name mimetype
-        DSSDocument businessDoc = loadDocumentFromResource("examples/ExampleXmlSigned.xml", "ExampleXmlSigned.xml", MimeType.XML);
+        DSSDocument businessDoc = loadDocumentFromResource("examples/ExampleXmlSigned.xml", "ExampleXmlSigned.xml", MimeTypeEnum.XML);
         businessContent.setDocument(businessDoc);
 
         ECodexContainer eCodexContainer = eCodexContainerService.create(businessContent);
@@ -123,7 +125,7 @@ public abstract class ECodexContainerFactoryServiceITCaseTemplate {
         BusinessContent businessContent = new BusinessContent();
 
         //bytes name mimetype
-        DSSDocument businessDoc = loadDocumentFromResource("examples/ExampleXmlSigned.xml", "ExampleXmlSigned.xml", MimeType.XML);
+        DSSDocument businessDoc = loadDocumentFromResource("examples/ExampleXmlSigned.xml", "ExampleXmlSigned.xml", MimeTypeEnum.XML);
         businessContent.setDocument(businessDoc);
 
         ECodexContainer eCodexContainer = eCodexContainerService.create(businessContent);
@@ -170,7 +172,7 @@ public abstract class ECodexContainerFactoryServiceITCaseTemplate {
         BusinessContent businessContent = new BusinessContent();
 
         //bytes name mimetype
-        DSSDocument businessDoc = loadDocumentFromResource("examples/ExampleAsics.asics", "ExampleAsics.asics", MimeType.ASICS);
+        DSSDocument businessDoc = loadDocumentFromResource("examples/ExampleAsics.asics", "ExampleAsics.asics", MimeTypeEnum.ASICS);
         businessContent.setDocument(businessDoc);
 
         ECodexContainer eCodexContainer = eCodexContainerService.create(businessContent);
@@ -213,7 +215,7 @@ public abstract class ECodexContainerFactoryServiceITCaseTemplate {
         BusinessContent businessContent = new BusinessContent();
 
         //bytes name mimetype
-        DSSDocument businessDoc = loadDocumentFromResource("examples/text.txt", "text.txt", MimeType.TEXT);
+        DSSDocument businessDoc = loadDocumentFromResource("examples/text.txt", "text.txt", MimeTypeEnum.TEXT);
         businessContent.setDocument(businessDoc);
 
         ECodexContainer eCodexContainer = eCodexContainerService.create(businessContent);
@@ -248,10 +250,10 @@ public abstract class ECodexContainerFactoryServiceITCaseTemplate {
         BusinessContent businessContent = new BusinessContent();
 
         //bytes name mimetype
-        DSSDocument businessDoc = loadDocumentFromResource("examples/Form_A.pdf", "Form_A.pdf", MimeType.PDF);
+        DSSDocument businessDoc = loadDocumentFromResource("examples/Form_A.pdf", "Form_A.pdf", MimeTypeEnum.PDF);
         businessContent.setDocument(businessDoc);
 
-        DSSDocument dssDocument = loadDocumentFromResource("examples/Form_A.pdf", "Addition.pdf", MimeType.PDF);
+        DSSDocument dssDocument = loadDocumentFromResource("examples/Form_A.pdf", "Addition.pdf", MimeTypeEnum.PDF);
         businessContent.addAttachment(dssDocument);
 
         ECodexContainer eCodexContainer = eCodexContainerService.create(businessContent);

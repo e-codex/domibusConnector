@@ -46,10 +46,11 @@ public class ValidEtisValidationPolicyXmlValidator implements ConstraintValidato
             LOGGER.warn("Error while loading resource", ioe);
             return false;
         } catch (XMLStreamException | JAXBException | SAXException e) {
-//            e.printStackTrace();
-            //TODO: error...
             LOGGER.warn("Parsing error during validation", e);
             return false;
+        } catch (Exception e) {
+            LOGGER.error("Unable to validate due exception!", e);
+            return true;
         }
     }
 }

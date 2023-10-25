@@ -160,6 +160,10 @@ This is done by loading our class first.
 
 === 4.4.11
 
+=== Fixes
+
+* Database scripts reorganised
+
 === Upgrades
 
 * Upgrade DSS Utils to 5.12.1

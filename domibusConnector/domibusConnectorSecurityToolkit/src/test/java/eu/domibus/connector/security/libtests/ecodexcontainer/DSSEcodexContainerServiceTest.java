@@ -10,9 +10,10 @@ import eu.ecodex.dss.service.impl.dss.DSSECodexLegalValidationService;
 import eu.ecodex.dss.util.SignatureParametersFactory;
 import eu.europa.esig.dss.enumerations.DigestAlgorithm;
 import eu.europa.esig.dss.enumerations.EncryptionAlgorithm;
+import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
-import eu.europa.esig.dss.model.MimeType;
+
 import eu.europa.esig.dss.service.http.proxy.ProxyConfig;
 import eu.europa.esig.dss.service.http.proxy.ProxyProperties;
 import org.junit.jupiter.api.BeforeEach;
@@ -158,7 +159,7 @@ public class DSSEcodexContainerServiceTest {
         DSSDocument xmlDocument = new InMemoryDocument(
             loadByteArrayFromClassPathRessource("/examples/Form_A.xml"),
             DomibusSecurityToolkitImpl.CONTENT_XML_IDENTIFIER + ".xml",
-            MimeType.PDF);        
+                MimeTypeEnum.PDF);
    
         businessContent.setDocument(xmlDocument);
         
@@ -166,7 +167,7 @@ public class DSSEcodexContainerServiceTest {
         DSSDocument formAPdf = new InMemoryDocument(
                             loadByteArrayFromClassPathRessource("/examples/Form_A.pdf"),
                             DomibusSecurityToolkitImpl.MAIN_DOCUMENT_NAME + ".pdf",
-                            MimeType.PDF);        
+                MimeTypeEnum.PDF);
         businessContent.addAttachment(formAPdf);
         
         //big dss document (4GB random bytes)
@@ -176,7 +177,7 @@ public class DSSEcodexContainerServiceTest {
         DSSDocument attachmentOne = new InMemoryDocument(
                 loadByteArrayFromClassPathRessource("/examples/supercool.pdf"),
                 "supercool.pdf",
-                MimeType.PDF);
+                MimeTypeEnum.PDF);
         
         businessContent.addAttachment(attachmentOne);
         
