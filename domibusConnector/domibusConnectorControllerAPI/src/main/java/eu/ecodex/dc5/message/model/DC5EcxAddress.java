@@ -7,7 +7,7 @@ import eu.ecodex.dc5.message.validation.OutgoingMessageRules;
 import lombok.*;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

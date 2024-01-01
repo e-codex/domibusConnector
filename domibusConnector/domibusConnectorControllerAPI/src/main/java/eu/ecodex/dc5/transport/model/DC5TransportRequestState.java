@@ -4,7 +4,7 @@ package eu.ecodex.dc5.transport.model;
 import eu.domibus.connector.domain.enums.TransportState;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter

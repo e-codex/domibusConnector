@@ -186,11 +186,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>eu.ecodex.utils</groupId>
-            <artifactId>logging-tester</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>eu.domibus.connector</groupId>
             <artifactId>domibusConnectorTestData</artifactId>
             <version>${project.version}</version>
@@ -205,10 +200,6 @@
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
         </dependency>
-        <dependency>
-            <groupId>eu.ecodex.utils</groupId>
-            <artifactId>spring-boot-property-converter</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>eu.domibus.connector</groupId>
@@ -218,25 +209,25 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0-b170201.1204</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-api</artifactId>-->
+<!--            <version>2.3.0-b170201.1204</version>-->
+<!--        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/javax.activation/activation -->
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.activation/activation &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.activation</groupId>-->
+<!--            <artifactId>activation</artifactId>-->
+<!--            <version>1.1</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.6</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.glassfish.jaxb</groupId>-->
+<!--            <artifactId>jaxb-runtime</artifactId>-->
+<!--            <version>2.3.6</version>-->
+<!--        </dependency>-->
     </dependencies>
     <build>
         <!-- activate resource filtering to provide the tests with correct properties for the environment,
@@ -255,35 +246,7 @@
             </testResource>
         </testResources>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <!-- copy log4j2-test.xml from domibusConnectorLoggingTest module -->
-                        <id>copy-log4j2-test</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>eu.ecodex.utils</groupId>
-                                    <artifactId>logging-tester</artifactId>
-                                    <classifier>log4j2-test</classifier>
-                                    <version>${ecodex.dependencies.version}</version>
-                                    <type>xml</type>
-                                    <overWrite>true</overWrite>
-                                    <!--<outputAbsoluteArtifactFilename>target/test-classes/log4j2-test.xml</outputAbsoluteArtifactFilename>-->
-                                    <outputDirectory>${project.build.directory}/test-classes</outputDirectory>
-                                    <destFileName>log4j2-test.xml</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
     </build>
 </project>

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class JpaConfigurationTest {
 
     @Autowired
-    EntityManager em;
+     EntityManager em;
 
     @Test
     public void test() {

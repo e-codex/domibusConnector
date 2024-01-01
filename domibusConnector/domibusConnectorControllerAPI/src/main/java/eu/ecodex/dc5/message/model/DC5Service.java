@@ -1,15 +1,12 @@
 package eu.ecodex.dc5.message.model;
 
 import eu.ecodex.dc5.message.validation.IncomingMessageRules;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.core.style.ToStringCreator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

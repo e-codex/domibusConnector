@@ -4,7 +4,7 @@ import eu.domibus.connector.persistence.service.impl.helper.StoreType;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.Date;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  *  This class stores message content metadata for

@@ -3,7 +3,7 @@ package eu.ecodex.dc5.domain.model;
 import eu.domibus.connector.domain.model.DC5BusinessDomain;
 
 import javax.annotation.Nullable;
-import javax.persistence.AttributeConverter;
+import jakarta.persistence.AttributeConverter;
 
 
 public class BusinessDomainIdConverter implements AttributeConverter<DC5BusinessDomain.BusinessDomainId, String> {

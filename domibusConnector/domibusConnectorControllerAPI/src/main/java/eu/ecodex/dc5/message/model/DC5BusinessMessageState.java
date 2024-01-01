@@ -3,7 +3,7 @@ package eu.ecodex.dc5.message.model;
 import eu.domibus.connector.domain.enums.DomibusConnectorEvidenceType;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.stream.Stream;
 

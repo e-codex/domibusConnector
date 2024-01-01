@@ -2,7 +2,7 @@ package eu.ecodex.dc5.link.model;
 
 import eu.domibus.connector.persistence.model.PDomibusConnectorPersistenceModel;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.HashMap;
 import java.util.Map;
 

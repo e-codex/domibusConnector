@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    eu.ecodex.utils.configuration.ui.vaadin.tools.ConfigurationPropertiesUiAutoConfiguration

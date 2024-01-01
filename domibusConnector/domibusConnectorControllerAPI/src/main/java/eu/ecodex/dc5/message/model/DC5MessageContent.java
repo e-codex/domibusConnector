@@ -5,7 +5,7 @@ import lombok.*;
 import org.springframework.core.style.ToStringCreator;
 import org.springframework.util.CollectionUtils;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;

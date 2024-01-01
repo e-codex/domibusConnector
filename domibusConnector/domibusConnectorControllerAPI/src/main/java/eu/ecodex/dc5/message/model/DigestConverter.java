@@ -1,6 +1,6 @@
 package eu.ecodex.dc5.message.model;
 
-import javax.persistence.AttributeConverter;
+import jakarta.persistence.AttributeConverter;
 
 public class DigestConverter implements AttributeConverter<Digest, String> {
 

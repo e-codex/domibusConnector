@@ -1,7 +1,7 @@
 package eu.domibus.connector.controller.service;
 
-import javax.jms.Message;
-import javax.jms.Queue;
+import jakarta.jms.Message;
+import jakarta.jms.Queue;
 import java.util.List;
 
 public interface HasManageableDlq extends PutOnQueue {

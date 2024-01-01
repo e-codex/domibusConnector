@@ -2,7 +2,7 @@ package eu.ecodex.dc5.message.model;
 
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "DC5_PARTNER")

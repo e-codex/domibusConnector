@@ -18,7 +18,7 @@ import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
-import javax.xml.bind.PropertyException;
+import jakarta.xml.bind.PropertyException;
 import jakarta.xml.bind.Unmarshaller;
 
 import eu.ecodex.dss.model.token.OriginalValidationReportContainer;

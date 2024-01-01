@@ -6,6 +6,6 @@ public interface PutOnQueue {
 
     public void putOnQueue(DC5Message message);
 
-    public javax.jms.Queue getQueue();
+    public jakarta.jms.Queue getQueue();
 
 }

@@ -22,7 +22,7 @@ import eu.ecodex.evidences.types.ECodexMessageDetails;
 import eu.spocseu.edeliverygw.configuration.EDeliveryDetails;
 import eu.spocseu.edeliverygw.configuration.xsd.EDeliveryDetail;
 
-import javax.jms.Message;
+import jakarta.jms.Message;
 import java.util.Objects;
 import java.util.Optional;
 

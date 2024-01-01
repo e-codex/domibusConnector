@@ -3,7 +3,7 @@ package eu.ecodex.dc5.process.model;
 import eu.ecodex.dc5.process.MessageProcessId;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

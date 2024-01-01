@@ -2,7 +2,7 @@ package eu.domibus.connector.persistence.model;
 
 import eu.ecodex.dc5.message.model.DetachedSignatureMimeType;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 //@Entity
 //@Table(name = PDomibusConnectorDetachedSignature.TABLE_NAME)

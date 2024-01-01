@@ -163,7 +163,7 @@ public class ReactiveDataLoader implements DataLoader {
 		return null;
 	}
 
-	@Override
+//	@Override
 	public byte[] get(String url, boolean refresh) {
 		return this.get(url);
 	}

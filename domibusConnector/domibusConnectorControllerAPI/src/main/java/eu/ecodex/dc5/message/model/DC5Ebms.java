@@ -3,11 +3,12 @@ package eu.ecodex.dc5.message.model;
 import eu.domibus.connector.domain.enums.MessageTargetSource;
 import eu.ecodex.dc5.message.validation.ConfirmationMessageRules;
 import eu.ecodex.dc5.message.validation.IncomingMessageRules;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.core.style.ToStringCreator;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;

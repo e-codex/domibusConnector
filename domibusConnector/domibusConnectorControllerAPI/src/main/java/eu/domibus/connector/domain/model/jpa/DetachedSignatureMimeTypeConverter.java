@@ -2,7 +2,7 @@ package eu.domibus.connector.domain.model.jpa;
 
 import eu.ecodex.dc5.message.model.DetachedSignatureMimeType;
 
-import javax.persistence.AttributeConverter;
+import jakarta.persistence.AttributeConverter;
 import java.util.stream.Stream;
 
 //@Converter(autoApply = true)

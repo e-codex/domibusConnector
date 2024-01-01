@@ -3,7 +3,7 @@ package eu.ecodex.dc5.message.model;
 import eu.ecodex.dc5.message.validation.IncomingBusinessMesssageRules;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 @Entity

@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.annotation.Nonnull;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import eu.domibus.connector.domain.enums.MessageTargetSource;
 

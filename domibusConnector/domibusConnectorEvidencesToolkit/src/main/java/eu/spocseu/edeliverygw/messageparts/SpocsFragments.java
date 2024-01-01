@@ -30,12 +30,13 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
+
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
+import jakarta.mail.internet.AddressException;
+import jakarta.mail.internet.InternetAddress;
 import org.etsi.uri._02231.v2_.ElectronicAddressType;
 import org.etsi.uri._02640.v2.AttributedElectronicAddressType;
 import org.etsi.uri._02640.v2.EntityDetailsType;

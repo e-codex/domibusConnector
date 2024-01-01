@@ -6,7 +6,7 @@ import eu.ecodex.dc5.domain.model.BusinessDomainIdConverter;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import java.util.HashMap;
 import java.util.Map;

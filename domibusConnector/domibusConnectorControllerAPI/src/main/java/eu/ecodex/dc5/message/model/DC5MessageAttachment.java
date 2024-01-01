@@ -11,7 +11,7 @@ import eu.domibus.connector.domain.model.json.LargeFileReferenceSerializer;
 import lombok.*;
 import org.springframework.core.style.ToStringCreator;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 

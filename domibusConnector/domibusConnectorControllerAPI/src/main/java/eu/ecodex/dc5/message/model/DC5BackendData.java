@@ -3,7 +3,7 @@ package eu.ecodex.dc5.message.model;
 import lombok.*;
 import org.springframework.core.style.ToStringCreator;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity

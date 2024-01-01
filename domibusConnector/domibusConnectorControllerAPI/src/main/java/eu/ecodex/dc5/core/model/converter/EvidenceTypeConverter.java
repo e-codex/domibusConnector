@@ -2,8 +2,8 @@ package eu.ecodex.dc5.core.model.converter;
 
 import eu.domibus.connector.domain.enums.DomibusConnectorEvidenceType;
 
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
 import java.util.stream.Stream;
 
 public class EvidenceTypeConverter implements AttributeConverter<DomibusConnectorEvidenceType, String> {

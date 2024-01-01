@@ -94,12 +94,12 @@
             <version>${project.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.0-b170201.1204</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-api</artifactId>-->
+<!--            <version>2.3.0-b170201.1204</version>-->
+<!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/javax.activation/activation -->
         <dependency>
@@ -113,41 +113,18 @@
             <artifactId>jaxb-runtime</artifactId>
             <version>2.3.6</version>
         </dependency>
+        <dependency>
+            <groupId>jakarta.mail</groupId>
+            <artifactId>jakarta.mail-api</artifactId>
+        </dependency>
 
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.15.3</version>
-                <executions>
-                    <execution>
-                        <id>schemas</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <schemaDirectory>src/main/xsd</schemaDirectory>
-                            <bindingDirectory>src/main/xjb</bindingDirectory>
-                            <schemaIncludes>
-                                <include>eDeliveryDetails.xsd</include>
-                                <include>TS102640_v2.xsd</include>
-                                <include>SPOCS_ts102640_soap_body.xsd</include>
-                            </schemaIncludes>
-                            <strict>true</strict>
-                            <extension>true</extension>
-                            <args>
-                                <arg>-no-header</arg>
-                            </args>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
 <!--            <plugin>-->
-<!--                <groupId>com.helger.maven</groupId>-->
-<!--                <artifactId>jaxb40-maven-plugin</artifactId>-->
-<!--                <version>0.16.1</version>-->
+<!--                <groupId>org.jvnet.jaxb2.maven2</groupId>-->
+<!--                <artifactId>maven-jaxb2-plugin</artifactId>-->
+<!--                <version>0.15.3</version>-->
 <!--                <executions>-->
 <!--                    <execution>-->
 <!--                        <id>schemas</id>-->
@@ -171,6 +148,33 @@
 <!--                    </execution>-->
 <!--                </executions>-->
 <!--            </plugin>-->
+            <plugin>
+                <groupId>com.helger.maven</groupId>
+                <artifactId>jaxb40-maven-plugin</artifactId>
+                <version>0.16.1</version>
+                <executions>
+                    <execution>
+                        <id>schemas</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>src/main/xsd</schemaDirectory>
+                            <bindingDirectory>src/main/xjb</bindingDirectory>
+                            <schemaIncludes>
+                                <include>eDeliveryDetails.xsd</include>
+                                <include>TS102640_v2.xsd</include>
+                                <include>SPOCS_ts102640_soap_body.xsd</include>
+                            </schemaIncludes>
+                            <strict>true</strict>
+                            <extension>true</extension>
+                            <args>
+                                <arg>-no-header</arg>
+                            </args>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

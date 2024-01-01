@@ -4,7 +4,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 //import eu.ecodex.dc5.message.model.DomibusConnectorParty;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 //@Entity
 //@IdClass(PDomibusConnectorPartyPK.class)

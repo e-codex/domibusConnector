@@ -4,7 +4,7 @@ import eu.ecodex.dc5.message.validation.IncomingMessageRules;
 import lombok.*;
 import org.springframework.core.style.ToStringCreator;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

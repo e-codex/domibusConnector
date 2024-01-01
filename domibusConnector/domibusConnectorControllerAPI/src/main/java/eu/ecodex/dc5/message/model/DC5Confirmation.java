@@ -6,7 +6,7 @@ import lombok.*;
 import org.springframework.core.style.ToStringCreator;
 
 import javax.annotation.CheckForNull;
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Arrays;
 
 /**

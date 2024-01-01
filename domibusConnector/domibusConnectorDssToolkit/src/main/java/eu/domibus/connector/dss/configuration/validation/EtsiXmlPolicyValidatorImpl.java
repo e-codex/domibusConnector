@@ -31,7 +31,7 @@ public class EtsiXmlPolicyValidatorImpl implements EtsiXmlPolicyValidator {
         } catch (IOException ioe) {
             log.warn("Error while loading resource", ioe);
             return false;
-        } catch (XMLStreamException | javax.xml.bind.JAXBException | SAXException e) {
+        } catch (XMLStreamException | jakarta.xml.bind.JAXBException | SAXException e) {
 //            e.printStackTrace();
             //TODO: error...
             log.warn("Parsing error during validation", e);

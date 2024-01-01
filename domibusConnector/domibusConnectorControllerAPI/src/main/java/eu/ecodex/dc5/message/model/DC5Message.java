@@ -15,12 +15,11 @@ import eu.ecodex.dc5.message.validation.IncomingBusinessMesssageRules;
 import eu.ecodex.dc5.message.validation.IncomingMessageRules;
 import eu.ecodex.dc5.message.validation.OutgoingMessageRules;
 import eu.ecodex.dc5.process.model.DC5MsgProcess;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.core.style.ToStringCreator;
 
 import javax.annotation.CheckForNull;
-import javax.inject.Named;
-import javax.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;

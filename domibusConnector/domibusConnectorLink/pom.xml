@@ -87,10 +87,6 @@
             <artifactId>domibusConnectorPersistence</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>eu.ecodex.utils</groupId>
-            <artifactId>spring-property-configuration-manager-api</artifactId>
-        </dependency>
         <!-- Test dependencies -->
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -166,11 +162,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>com.github.database-rider</groupId>
             <artifactId>rider-spring</artifactId>

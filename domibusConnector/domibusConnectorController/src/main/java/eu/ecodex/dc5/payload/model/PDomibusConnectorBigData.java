@@ -3,7 +3,7 @@ package eu.ecodex.dc5.payload.model;
 import eu.domibus.connector.persistence.model.PDomibusConnectorPersistenceModel;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity

@@ -2,7 +2,7 @@ package eu.ecodex.dc5.message.model;
 
 import eu.domibus.connector.domain.enums.MessageTargetSource;
 
-import javax.persistence.AttributeConverter;
+import jakarta.persistence.AttributeConverter;
 
 public class MessageTargetSourceConverter implements AttributeConverter<MessageTargetSource, String> {
 
