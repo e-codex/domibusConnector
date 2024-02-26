@@ -33,8 +33,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.util.Optional;
 
-//@HtmlImport("styles/shared-styles.html")
-//@StyleSheet("styles/grid.css")
+
 @Component
 @Route(value = MessageDetails.ROUTE, layout = MessageLayout.class)
 @UIScope

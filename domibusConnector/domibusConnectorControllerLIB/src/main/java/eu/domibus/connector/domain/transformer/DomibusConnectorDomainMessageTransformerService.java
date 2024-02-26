@@ -22,7 +22,7 @@ import org.springframework.util.StringUtils;
 
 import javax.activation.DataHandler;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamSource;
 import java.io.*;

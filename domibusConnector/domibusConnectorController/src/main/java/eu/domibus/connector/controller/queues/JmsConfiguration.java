@@ -17,8 +17,8 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.jms.Queue;
-import javax.validation.Validator;
+import jakarta.jms.Queue;
+import jakarta.validation.Validator;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;

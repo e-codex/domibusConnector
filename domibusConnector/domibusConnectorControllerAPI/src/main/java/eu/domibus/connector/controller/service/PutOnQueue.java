@@ -6,6 +6,6 @@ public interface PutOnQueue {
 
     public void putOnQueue(DomibusConnectorMessage message);
 
-    public javax.jms.Queue getQueue();
+    public jakarta.jms.Queue getQueue();
 
 }

@@ -15,24 +15,29 @@
             <artifactId>domibusConnectorControllerAPI</artifactId>
             <version>${project.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-jta-atomikos</artifactId>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jta-atomikos</artifactId>
+            <groupId>com.atomikos</groupId>
+            <artifactId>transactions-spring-boot3-starter</artifactId>
+            <version>6.0.109</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-artemis</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>artemis-jms-server</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jboss-logmanager</artifactId>
-                    <groupId>org.jboss.logmanager</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.activemq</groupId>-->
+<!--            <artifactId>artemis-jms-server</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>jboss-logmanager</artifactId>-->
+<!--                    <groupId>org.jboss.logmanager</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
         <!--        <dependency>-->
         <!--            <groupId>org.apache.activemq</groupId>-->
         <!--            <artifactId>activemq-kahadb-store</artifactId>-->
@@ -60,11 +65,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
-        <dependency>
-            <groupId>eu.ecodex.utils</groupId>
-            <artifactId>spring-quartz-scheduled</artifactId>
-            <version>${eu.ecodex.utils.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>eu.ecodex.utils</groupId>-->
+<!--            <artifactId>spring-quartz-scheduled</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
         <!-- JMS -->
         <!--        <dependency>-->
         <!--            <groupId>org.apache.activemq</groupId>-->

@@ -12,6 +12,11 @@
     <description>Provides helper classes and methods which can be used in connector, connectorClient and connectorGatewayPlugin</description>
     <dependencies>
         <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+
+        </dependency>
+        <dependency>
             <groupId>eu.domibus.connector</groupId>
             <artifactId>domibusConnectorAPI</artifactId>
             <version>${project.version}</version>

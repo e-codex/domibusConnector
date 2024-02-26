@@ -24,8 +24,7 @@ import javax.annotation.PostConstruct;
 import java.util.EnumSet;
 import java.util.Optional;
 
-//@HtmlImport("styles/shared-styles.html")
-//@StyleSheet("styles/grid.css")
+
 @Component
 @UIScope
 @Route(value = NewUser.ROUTE, layout = UserLayout.class)

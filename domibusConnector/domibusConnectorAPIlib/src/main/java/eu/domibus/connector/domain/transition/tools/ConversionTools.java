@@ -10,7 +10,7 @@ import java.nio.file.Files;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;

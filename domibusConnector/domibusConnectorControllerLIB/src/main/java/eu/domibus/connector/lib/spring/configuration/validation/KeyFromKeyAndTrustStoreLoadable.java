@@ -2,7 +2,7 @@ package eu.domibus.connector.lib.spring.configuration.validation;
 
 import eu.domibus.connector.lib.spring.configuration.KeyAndKeyStoreAndTrustStoreConfigurationProperties;
 
-import javax.validation.*;
+import jakarta.validation.*;
 import java.util.Set;
 
 public class KeyFromKeyAndTrustStoreLoadable implements ConstraintValidator<CheckKeyIsLoadableFromKeyStore, KeyAndKeyStoreAndTrustStoreConfigurationProperties> {

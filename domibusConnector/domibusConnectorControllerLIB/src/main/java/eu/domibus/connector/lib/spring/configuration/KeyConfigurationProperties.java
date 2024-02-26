@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Configuration properties for referencing a
