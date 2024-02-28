@@ -16,7 +16,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.PreDestroy;
+import jakarta.annotation.PreDestroy;
 import jakarta.validation.constraints.NotNull;
 import java.time.temporal.ChronoUnit;
 import java.util.*;

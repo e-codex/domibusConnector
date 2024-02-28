@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 
-import javax.annotation.Resource;
-import javax.xml.ws.WebServiceContext;
+import jakarta.annotation.Resource;
+import jakarta.xml.ws.WebServiceContext;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingQueue;
 

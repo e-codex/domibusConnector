@@ -7,8 +7,9 @@ import eu.domibus.connector.tools.logging.LoggingMarker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.annotation.Configuration;
-import javax.annotation.PostConstruct;
-import javax.transaction.Transactional;
+import jakarta.annotation.PostConstruct;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Optional;
 
 @Configuration(value = CreateDefaultBusinessDomainOnFirstStart.BEAN_NAME)

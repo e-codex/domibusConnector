@@ -1,6 +1,6 @@
 package eu.domibus.connector.domain.enums;
 
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 import java.util.stream.Stream;
 
 public enum MessageTargetSource {

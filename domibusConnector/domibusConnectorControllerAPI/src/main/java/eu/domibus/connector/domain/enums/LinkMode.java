@@ -1,6 +1,5 @@
 package eu.domibus.connector.domain.enums;
 
-import javax.annotation.CheckForNull;
 import java.util.Optional;
 import java.util.stream.Stream;
 

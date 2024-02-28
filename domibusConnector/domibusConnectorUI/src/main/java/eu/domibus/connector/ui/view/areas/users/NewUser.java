@@ -20,7 +20,7 @@ import eu.domibus.connector.ui.view.areas.configuration.TabMetadata;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.util.EnumSet;
 import java.util.Optional;
 

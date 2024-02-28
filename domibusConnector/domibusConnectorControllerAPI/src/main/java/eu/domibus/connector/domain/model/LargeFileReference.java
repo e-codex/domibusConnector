@@ -4,7 +4,7 @@ import java.io.*;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
-import javax.activation.DataSource;
+import jakarta.activation.DataSource;
 import jakarta.validation.constraints.NotNull;
 
 import org.springframework.core.style.ToStringCreator;

@@ -4,7 +4,7 @@ import eu.domibus.connector.domain.model.DomibusConnectorAction;
 import eu.domibus.connector.persistence.model.PDomibusConnectorAction;
 import org.springframework.beans.BeanUtils;
 
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 
 public class ActionMapper {
 

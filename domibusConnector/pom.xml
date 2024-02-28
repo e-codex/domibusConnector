@@ -40,6 +40,21 @@
         <system>Jenkins</system>
         <url>https://secure.e-codex.eu/jenkins/view/domibusConnector/job/domibusWebConnector</url>
     </ciManagement>
+    <repositories>
+        <repository>
+            <id>cefdigital-releases</id>
+            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eDelivery/</url>
+        </repository>
+<!--        <repository>-->
+<!--            <id>repo1</id>-->
+<!--            <name>Maven Repository</name>-->
+<!--            <url>http://repo1.maven.org/maven2</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>cefdigital-snapshots</id>-->
+<!--            <url>https://ec.europa.eu/cefdigital/artifact/content/repositories/eDelivery-snapshots/</url>-->
+<!--        </repository>-->
+    </repositories>
     <!-- Shared version number properties -->
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -161,6 +176,21 @@
                 <version>${org.apache.cxf.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.xml.ws</groupId>
+                <artifactId>jakarta.xml.ws-api</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.jms</groupId>
+                <artifactId>jakarta.jms-api</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.mail</groupId>
+                <artifactId>jakarta.mail-api</artifactId>
+                <version>2.1.2</version>
             </dependency>
             <dependency>
                 <groupId>org.fusesource.jansi</groupId>
@@ -610,6 +640,11 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.30</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -779,6 +814,7 @@
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring.boot.version}</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
@@ -821,15 +857,6 @@
             </plugins>
         </pluginManagement>
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.12.0</version>
-                <configuration>
-                    <allowMajorUpdates>false</allowMajorUpdates>
-                    <allowMinorUpdates>false</allowMinorUpdates>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>com.atlassian.maven.plugins</groupId>
                 <artifactId>maven-jgitflow-plugin</artifactId>
@@ -979,6 +1006,7 @@
                             <version>11</version>
                         </requireJavaVersion>
                     </rules>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>

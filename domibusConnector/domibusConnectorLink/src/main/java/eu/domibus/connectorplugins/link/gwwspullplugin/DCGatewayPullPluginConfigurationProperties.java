@@ -15,7 +15,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-@ConfigurationProperties(prefix = "")
+@ConfigurationProperties
 @Validated
 public class DCGatewayPullPluginConfigurationProperties {
 

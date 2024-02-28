@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StreamUtils;
 import org.springframework.util.StringUtils;
 
-import javax.activation.DataHandler;
+import jakarta.activation.DataHandler;
 
 import jakarta.validation.constraints.NotNull;
 import javax.xml.transform.*;

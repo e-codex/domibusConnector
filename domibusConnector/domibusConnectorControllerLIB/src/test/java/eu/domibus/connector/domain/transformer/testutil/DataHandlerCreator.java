@@ -2,7 +2,7 @@ package eu.domibus.connector.domain.transformer.testutil;
 
 import eu.domibus.connector.domain.transformer.util.InputStreamDataSource;
 
-import javax.activation.DataHandler;
+import jakarta.activation.DataHandler;
 
 public class DataHandlerCreator {
 

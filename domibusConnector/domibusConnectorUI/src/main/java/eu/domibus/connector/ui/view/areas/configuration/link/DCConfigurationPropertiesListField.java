@@ -2,7 +2,7 @@ package eu.domibus.connector.ui.view.areas.configuration.link;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.customfield.CustomField;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.binder.*;
 import com.vaadin.flow.function.ValueProvider;
@@ -23,7 +23,7 @@ import java.util.*;
 public class DCConfigurationPropertiesListField extends CustomField<Map<String, String>>
 {
 
-    private static final Logger LOGGER = LogManager.getLogger(eu.ecodex.utils.configuration.ui.vaadin.tools.views.ListConfigurationPropertiesComponent.class);
+    private static final Logger LOGGER = LogManager.getLogger(DCConfigurationPropertiesListField.class);
 
     private final BeanToPropertyMapConverter beanToPropertyMapConverter;
     private final PropertyMapToBeanConverter propertyMapToBeanConverter;
@@ -100,7 +100,7 @@ public class DCConfigurationPropertiesListField extends CustomField<Map<String, 
 
     private <T> void processConfigCls(Class<T> cls) {
         CustomField<T> field = findFieldService.findField(cls);
-        Label statusLabel = new Label();
+        Span statusLabel = new Span();
         fields.put(cls, field);
         layout.add(statusLabel);
         layout.add(field);

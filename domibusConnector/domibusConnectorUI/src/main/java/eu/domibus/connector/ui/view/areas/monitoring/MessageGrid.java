@@ -1,16 +1,15 @@
 package eu.domibus.connector.ui.view.areas.monitoring;
 
 
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
 import eu.domibus.connector.domain.model.DomibusConnectorMessage;
 import eu.domibus.connector.ui.controller.QueueController;
 import eu.domibus.connector.ui.dto.WebQueue;
-
 import jakarta.jms.JMSException;
 import jakarta.jms.Message;
+
 import java.util.List;
 
 public class MessageGrid extends Grid<Message> {
@@ -27,7 +26,6 @@ public class MessageGrid extends Grid<Message> {
         this.parentView = parentView;
 
         this.setWidth("90%");
-        this.setHeightByRows(true);
 
         addColumn(this::getJMSMessageID).setHeader("Message ID (JMS ID)").setWidth("35%");
         addColumn(this::getConnectorId).setHeader("Connector ID").setWidth("35%");
