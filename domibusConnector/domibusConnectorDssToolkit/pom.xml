@@ -9,10 +9,6 @@
     <artifactId>domibusConnectorDssToolkit</artifactId>
     <dependencies>
         <dependency>
-            <groupId>eu.ecodex.utils</groupId>
-            <artifactId>spring-boot-property-converter</artifactId>
-        </dependency>
-        <dependency>
             <groupId>eu.europa.ec.joinup.sd-dss</groupId>
             <artifactId>dss-document</artifactId>
         </dependency>

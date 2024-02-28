@@ -2,13 +2,12 @@ package eu.domibus.connector.controller.queues;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.domibus.connector.common.annotations.DomainModelJsonObjectMapper;
-import org.apache.activemq.artemis.api.core.QueueConfiguration;
+import jakarta.jms.Queue;
+import jakarta.validation.Validator;
 import org.apache.activemq.artemis.api.core.RoutingType;
 import org.apache.activemq.artemis.api.core.SimpleString;
-import org.apache.activemq.artemis.core.config.CoreAddressConfiguration;
 import org.apache.activemq.artemis.core.settings.impl.AddressSettings;
 import org.apache.activemq.artemis.jms.client.ActiveMQQueue;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.jms.artemis.ArtemisConfigurationCustomizer;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -16,14 +15,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import javax.jms.Queue;
-import javax.validation.Validator;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @EnableJms
 @Configuration

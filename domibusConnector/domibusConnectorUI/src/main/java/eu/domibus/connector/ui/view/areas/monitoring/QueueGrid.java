@@ -9,7 +9,6 @@ public class QueueGrid extends Grid<WebQueue> {
         super();
 
         this.setWidth("100%");
-        this.setHeightByRows(true);
 
         addColumn(WebQueue::getName).setHeader("Queue").setWidth("40%");
         addColumn(WebQueue::getMsgsOnQueue).setHeader("Messages on Queue").setWidth("30%");

@@ -3,10 +3,10 @@ package eu.domibus.connector.ui.utils.binder;
 import com.vaadin.flow.component.HasValue;
 import com.vaadin.flow.data.binder.*;
 
-import javax.validation.Validator;
-import javax.validation.metadata.BeanDescriptor;
-import javax.validation.metadata.ConstraintDescriptor;
-import javax.validation.metadata.PropertyDescriptor;
+import jakarta.validation.Validator;
+import jakarta.validation.metadata.BeanDescriptor;
+import jakarta.validation.metadata.ConstraintDescriptor;
+import jakarta.validation.metadata.PropertyDescriptor;
 
 //TODO: create spring factory...
 public class SpringBeanValidationBinder<BEAN> extends Binder<BEAN> {
@@ -29,7 +29,7 @@ public class SpringBeanValidationBinder<BEAN> extends Binder<BEAN> {
      * @param beanType              the bean type to use, not {@code null}
      * @param scanNestedDefinitions if {@code true}, scan for nested property definitions as well
      */
-    public SpringBeanValidationBinder(javax.validation.Validator javaxValidator, Class<BEAN> beanType, boolean scanNestedDefinitions) {
+    public SpringBeanValidationBinder(jakarta.validation.Validator javaxValidator, Class<BEAN> beanType, boolean scanNestedDefinitions) {
         super(beanType, scanNestedDefinitions);
         this.javaxValidator = javaxValidator;
 //        if (!BeanUtil.checkBeanValidationAvailable()) {

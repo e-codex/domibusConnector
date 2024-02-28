@@ -297,7 +297,7 @@ class DSSTokenValidationCreator {
 //      int decreaseSigCount = 0;
 //		int decreaseValid = 0;
 
-		List<XmlToken> signatures = simpleReport.getJaxbModel().getSignatureOrTimestamp();
+		List<XmlToken> signatures = simpleReport.getJaxbModel().getSignatureOrTimestampOrEvidenceRecord();
 		List<XmlToken> toRemove = new ArrayList<XmlToken>();
 
 		for (XmlToken curSig : signatures) {

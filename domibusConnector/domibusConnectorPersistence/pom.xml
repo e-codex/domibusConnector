@@ -153,10 +153,6 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>eu.ecodex.utils</groupId>
-            <artifactId>spring-boot-property-converter</artifactId>
-        </dependency>
-        <dependency>
             <groupId>eu.domibus.connector</groupId>
             <artifactId>domibusConnectorTestData</artifactId>
             <version>${project.version}</version>
