@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.core.style.ToStringCreator;
 import org.springframework.lang.Nullable;
 
-import jakarta.validation.constraints.Null;
+import javax.validation.constraints.Null;
 
 
 /**

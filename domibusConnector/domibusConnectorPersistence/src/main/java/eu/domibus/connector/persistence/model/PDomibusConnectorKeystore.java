@@ -3,7 +3,7 @@ package eu.domibus.connector.persistence.model;
 import java.sql.Blob;
 import java.util.Date;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import eu.domibus.connector.domain.model.DomibusConnectorKeystore;
 

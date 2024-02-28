@@ -5,8 +5,8 @@ import eu.domibus.connector.domain.enums.LinkMode;
 import eu.domibus.connector.domain.enums.LinkType;
 import org.springframework.core.style.ToStringCreator;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;

@@ -18,9 +18,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.util.SystemPropertyUtils;
 
-import jakarta.annotation.Nullable;
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
+import javax.annotation.Nullable;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 
 @SpringBootApplication(scanBasePackages = "eu.domibus.connector")
 @EnableTransactionManagement

@@ -6,8 +6,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.annotation.Nonnull;
-import jakarta.persistence.*;
+import javax.annotation.Nonnull;
+import javax.persistence.*;
 
 import eu.domibus.connector.domain.enums.MessageTargetSource;
 

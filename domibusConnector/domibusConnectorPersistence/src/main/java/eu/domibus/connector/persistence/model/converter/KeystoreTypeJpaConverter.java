@@ -1,7 +1,7 @@
 package eu.domibus.connector.persistence.model.converter;
 
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.Converter;
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 
 import eu.domibus.connector.domain.model.DomibusConnectorKeystore.KeystoreType;
 

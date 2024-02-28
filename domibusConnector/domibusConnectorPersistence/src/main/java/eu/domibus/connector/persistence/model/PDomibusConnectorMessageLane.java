@@ -2,7 +2,7 @@ package eu.domibus.connector.persistence.model;
 
 import eu.domibus.connector.domain.model.DomibusConnectorBusinessDomain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.HashMap;
 import java.util.Map;

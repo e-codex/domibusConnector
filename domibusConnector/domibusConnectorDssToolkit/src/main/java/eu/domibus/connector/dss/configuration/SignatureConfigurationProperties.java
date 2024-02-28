@@ -4,7 +4,7 @@ import eu.domibus.connector.lib.spring.configuration.KeyAndKeyStoreConfiguration
 import eu.europa.esig.dss.enumerations.DigestAlgorithm;
 import eu.europa.esig.dss.enumerations.EncryptionAlgorithm;
 
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 
 public class SignatureConfigurationProperties extends KeyAndKeyStoreConfigurationProperties {
 

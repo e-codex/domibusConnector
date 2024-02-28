@@ -10,9 +10,8 @@
 package eu.ecodex.dss.model;
 
 import eu.ecodex.dss.model.token.Token;
-import eu.europa.esig.dss.enumerations.MimeType;
-import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import eu.europa.esig.dss.model.DSSDocument;
+import eu.europa.esig.dss.model.MimeType;
 
 import java.util.List;
 import java.util.Objects;
@@ -198,7 +197,7 @@ public class ECodexContainer {
 
         @Override
         public List<MimeType> getValidMimeTypes() {
-            return Stream.of(MimeTypeEnum.ASICS, MimeTypeEnum.ASICE).collect(Collectors.toList());
+            return Stream.of(MimeType.ASICS, MimeType.ASICE).collect(Collectors.toList());
         }
     }
 
@@ -212,7 +211,7 @@ public class ECodexContainer {
 
         @Override
         public List<MimeType> getValidMimeTypes() {
-            return Stream.of(MimeTypeEnum.PDF).collect(Collectors.toList());
+            return Stream.of(MimeType.PDF).collect(Collectors.toList());
         }
     }
 
@@ -226,7 +225,7 @@ public class ECodexContainer {
 
         @Override
         public List<MimeType> getValidMimeTypes() {
-            return Stream.of(MimeTypeEnum.XML).collect(Collectors.toList());
+            return Stream.of(MimeType.XML).collect(Collectors.toList());
         }
     }
     

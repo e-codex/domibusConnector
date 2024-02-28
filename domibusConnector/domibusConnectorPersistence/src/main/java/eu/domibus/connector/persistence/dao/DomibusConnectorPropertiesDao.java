@@ -6,7 +6,7 @@ import eu.domibus.connector.persistence.model.PDomibusConnectorProperties;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import jakarta.annotation.Nullable;
+import javax.annotation.Nullable;
 import java.util.Optional;
 
 /**

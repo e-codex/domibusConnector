@@ -180,8 +180,7 @@ public class Reports extends VerticalLayout {
 						dummy);
 				oName.setVisible(false);
 				file.setVisible(false);
-// this does not work anymore
-//				this.getUI().get().getPage().executeJavaScript("window.open('"+link.getHref()+"');");
+				this.getUI().get().getPage().executeJavaScript("window.open('"+link.getHref()+"');");
 			});
 			
 			downloadExcel.add(download);

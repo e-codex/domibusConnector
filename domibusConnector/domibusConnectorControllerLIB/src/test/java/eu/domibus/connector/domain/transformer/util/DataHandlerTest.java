@@ -2,7 +2,7 @@ package eu.domibus.connector.domain.transformer.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import jakarta.activation.DataHandler;
+import javax.activation.DataHandler;
 import org.junit.jupiter.api.Test;
 
 /**

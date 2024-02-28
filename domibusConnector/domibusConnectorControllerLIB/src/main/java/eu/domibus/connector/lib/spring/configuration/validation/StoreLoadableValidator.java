@@ -3,7 +3,7 @@ package eu.domibus.connector.lib.spring.configuration.validation;
 import eu.domibus.connector.common.service.DCKeyStoreService;
 import eu.domibus.connector.lib.spring.configuration.StoreConfigurationProperties;
 
-import jakarta.validation.*;
+import javax.validation.*;
 
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;

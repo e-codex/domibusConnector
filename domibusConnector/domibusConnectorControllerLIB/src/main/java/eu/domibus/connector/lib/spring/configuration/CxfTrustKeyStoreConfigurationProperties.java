@@ -2,8 +2,8 @@ package eu.domibus.connector.lib.spring.configuration;
 
 import eu.domibus.connector.lib.spring.configuration.validation.CheckKeyIsLoadableFromKeyStore;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @CheckKeyIsLoadableFromKeyStore
 @Valid

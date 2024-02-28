@@ -1,6 +1,6 @@
 package eu.domibus.connector.persistence.model.converter;
 
-import jakarta.persistence.AttributeConverter;
+import javax.persistence.AttributeConverter;
 import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;

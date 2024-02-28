@@ -4,7 +4,7 @@ import eu.domibus.connector.domain.enums.DomibusConnectorMessageDirection;
 import eu.domibus.connector.domain.enums.MessageTargetSource;
 import eu.domibus.connector.persistence.model.enums.PMessageDirection;
 
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 public class MessageDirectionMapper {
 

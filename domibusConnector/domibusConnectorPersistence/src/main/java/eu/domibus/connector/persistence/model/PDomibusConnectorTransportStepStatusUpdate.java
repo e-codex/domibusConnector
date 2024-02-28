@@ -4,8 +4,8 @@ import eu.domibus.connector.domain.enums.TransportState;
 import eu.domibus.connector.persistence.model.converter.TransportStateJpaConverter;
 import org.hibernate.annotations.CreationTimestamp;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.persistence.*;
+import javax.annotation.PostConstruct;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 

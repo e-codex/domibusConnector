@@ -2,9 +2,9 @@ package eu.domibus.connector.security.util;
 
 import eu.domibus.connector.domain.model.LargeFileReference;
 import eu.domibus.connector.persistence.service.LargeFilePersistenceService;
-import eu.europa.esig.dss.enumerations.MimeType;
 import eu.europa.esig.dss.model.CommonDocument;
 import eu.europa.esig.dss.model.DSSDocument;
+import eu.europa.esig.dss.model.MimeType;
 
 import java.io.IOException;
 import java.io.InputStream;

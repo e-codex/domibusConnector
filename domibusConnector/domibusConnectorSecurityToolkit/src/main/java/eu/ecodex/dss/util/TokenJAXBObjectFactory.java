@@ -12,7 +12,7 @@ package eu.ecodex.dss.util;
 
 import eu.ecodex.dss.model.token.*;
 
-import jakarta.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
@@ -152,7 +152,7 @@ public class TokenJAXBObjectFactory {
     }
     
     /**
-     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code &lt;}{@link eu.ecodex.dss.model.token.Token}{@code &gt;}
+     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code &lt;}{@link eu.ecodex.dss.model.token.Token}{@code &gt;}
      * 
      * @param value the token
      * @return the new instance representing the marshalled object

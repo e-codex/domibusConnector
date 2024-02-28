@@ -7,9 +7,9 @@ import eu.ecodex.dss.service.ECodexException;
 import eu.ecodex.dss.service.ECodexTechnicalValidationService;
 import eu.ecodex.dss.util.PdfValidationReportService;
 import eu.europa.esig.dss.diagnostic.DiagnosticData;
-import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
+import eu.europa.esig.dss.model.MimeType;
 import eu.europa.esig.dss.simplereport.SimpleReport;
 import eu.europa.esig.dss.validation.reports.Reports;
 import org.apache.commons.io.IOUtils;
@@ -120,7 +120,7 @@ public class OriginalSenderBasedAESAuthenticationServiceFactory implements DCAut
                     // create and write the pdf version to the stream
                     final PdfValidationReportService pdfService = new PdfValidationReportService();
                     pdfService.createReport(diagnosticData, simpleReport, pdfStream);
-                    return new InMemoryDocument(pdfStream.toByteArray(), "dss-report.pdf", MimeTypeEnum.PDF);
+                    return new InMemoryDocument(pdfStream.toByteArray(), "dss-report.pdf", MimeType.PDF);
                 } else {
                     return new InMemoryDocument(new byte[0]);
                 }

@@ -1,6 +1,6 @@
 package eu.domibus.connector.persistence.service.impl;
 
-import jakarta.annotation.Nullable;
+import javax.annotation.Nullable;
 
 import org.springframework.beans.BeanUtils;
 

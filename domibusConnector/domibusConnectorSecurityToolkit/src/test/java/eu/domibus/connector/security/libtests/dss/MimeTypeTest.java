@@ -1,9 +1,9 @@
 
 package eu.domibus.connector.security.libtests.dss;
 
-
-import eu.europa.esig.dss.enumerations.MimeType;
-import eu.europa.esig.dss.enumerations.MimeTypeEnum;
+import eu.europa.esig.dss.model.DSSException;
+import eu.europa.esig.dss.model.MimeType;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -20,7 +20,7 @@ public class MimeTypeTest {
         String pdfMimeTypeString = "application/pdf";
         
         MimeType mimeType = MimeType.fromMimeTypeString(pdfMimeTypeString);
-        assertThat(mimeType).isEqualTo(MimeTypeEnum.PDF);
+        assertThat(mimeType).isEqualTo(MimeType.PDF);
         
     }
     
@@ -36,7 +36,7 @@ public class MimeTypeTest {
     public void testFromMimeTypeString_forDssLibUnknwonMimeType_libShouldNotChangeIt() {
         String unknownMimeType = "application/superduper";
         MimeType mimeType = MimeType.fromMimeTypeString(unknownMimeType);
-        MimeType expectedMimeType = MimeTypeEnum.BINARY;
+        MimeType expectedMimeType = MimeType.BINARY;
         assertThat(mimeType.getMimeTypeString())                
                 .isEqualTo(unknownMimeType);
     }

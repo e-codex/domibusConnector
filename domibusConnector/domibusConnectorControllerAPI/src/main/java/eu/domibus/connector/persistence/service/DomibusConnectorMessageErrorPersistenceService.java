@@ -6,7 +6,7 @@ import eu.domibus.connector.domain.model.DomibusConnectorMessageId;
 import eu.domibus.connector.persistence.service.exceptions.PersistenceException;
 
 import java.util.List;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 /**
  *

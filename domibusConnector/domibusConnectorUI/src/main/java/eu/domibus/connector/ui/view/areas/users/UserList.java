@@ -28,6 +28,8 @@ import java.util.EnumSet;
 import java.util.LinkedList;
 import java.util.List;
 
+//@HtmlImport("styles/shared-styles.html")
+//@StyleSheet("styles/grid.css")
 @Component
 @UIScope
 @Route(value = UserList.ROUTE, layout = UserLayout.class)

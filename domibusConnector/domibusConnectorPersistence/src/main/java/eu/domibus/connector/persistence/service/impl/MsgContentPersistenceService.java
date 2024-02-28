@@ -20,7 +20,8 @@ import org.springframework.util.MimeTypeUtils;
 import org.springframework.util.StreamUtils;
 import org.springframework.util.StringUtils;
 
-import jakarta.annotation.Nonnull;
+import javax.annotation.CheckForNull;
+import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -233,7 +234,7 @@ public class MsgContentPersistenceService implements DCMessageContentManager {
     PDomibusConnectorMsgCont storeObjectIntoMsgCont(
             PDomibusConnectorMessage dbMessage,
             @Nonnull StoreType type,
-             LargeFileReference ref) throws PersistenceException {
+            @CheckForNull LargeFileReference ref) throws PersistenceException {
         if (dbMessage == null) {
             throw new IllegalArgumentException("message cannot be null!");
         }

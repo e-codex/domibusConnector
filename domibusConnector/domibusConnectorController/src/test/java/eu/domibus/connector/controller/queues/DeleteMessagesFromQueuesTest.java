@@ -29,7 +29,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import jakarta.jms.*;
+import javax.jms.*;
 import java.util.ArrayList;
 import java.util.List;
 

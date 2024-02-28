@@ -4,9 +4,16 @@ import eu.domibus.connector.common.annotations.MapNested;
 import eu.domibus.connector.lib.spring.configuration.StoreConfigurationProperties;
 import eu.ecodex.utils.configuration.api.annotation.ConfigurationDescription;
 import eu.ecodex.utils.configuration.api.annotation.ConfigurationLabel;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+import javax.annotation.CheckForNull;
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @MapNested
 public class CertificateVerifierConfigurationProperties {
@@ -63,7 +70,7 @@ public class CertificateVerifierConfigurationProperties {
      */
     private boolean aiaEnabled = true;
 
-    public String getCertificateVerifierName() {
+    public @CheckForNull String getCertificateVerifierName() {
         return certificateVerifierName;
     }
 
@@ -79,7 +86,7 @@ public class CertificateVerifierConfigurationProperties {
         this.trustStoreEnabled = trustStoreEnabled;
     }
 
-    public StoreConfigurationProperties getTrustStore() {
+    public @CheckForNull StoreConfigurationProperties getTrustStore() {
         return trustStore;
     }
 
@@ -87,7 +94,7 @@ public class CertificateVerifierConfigurationProperties {
         this.trustStore = trustStore;
     }
 
-    public StoreConfigurationProperties getIgnoreStore() {
+    public @CheckForNull StoreConfigurationProperties getIgnoreStore() {
         return ignoreStore;
     }
 
@@ -95,7 +102,7 @@ public class CertificateVerifierConfigurationProperties {
         this.ignoreStore = ignoreStore;
     }
 
-    public String getTrustedListSource() {
+    public @CheckForNull String getTrustedListSource() {
         return trustedListSource;
     }
 

@@ -21,10 +21,8 @@ public class ConnectorMessageProcessingPropertiesConfigForm extends FormLayout {
 
     public ConnectorMessageProcessingPropertiesConfigForm() {
 
-        outgoingPModeVerificationMode = new Select<>();
-        outgoingPModeVerificationMode.setItems(ConnectorMessageProcessingProperties.PModeVerificationMode.values());
-        incomingPModeVerificationMode = new Select<>();
-        incomingPModeVerificationMode.setItems(ConnectorMessageProcessingProperties.PModeVerificationMode.values());
+        outgoingPModeVerificationMode = new Select<>(ConnectorMessageProcessingProperties.PModeVerificationMode.values());
+        incomingPModeVerificationMode = new Select<>(ConnectorMessageProcessingProperties.PModeVerificationMode.values());
 
         this.setResponsiveSteps(new FormLayout.ResponsiveStep("30cm", 1, FormLayout.ResponsiveStep.LabelsPosition.ASIDE));
 

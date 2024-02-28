@@ -3,7 +3,7 @@ package eu.domibus.connector.domain.model;
 import eu.domibus.connector.controller.service.TransportStateService;
 import eu.domibus.connector.domain.enums.TransportState;
 
-import jakarta.annotation.Nullable;
+import javax.annotation.Nullable;
 import java.time.LocalDateTime;
 import java.util.*;
 

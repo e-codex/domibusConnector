@@ -3,8 +3,7 @@ package eu.domibus.connector.ui.service;
 import java.io.IOException;
 import java.util.Optional;
 
-import eu.europa.esig.dss.enumerations.MimeTypeEnum;
-import jakarta.activation.DataHandler;
+import javax.activation.DataHandler;
 import javax.xml.transform.Source;
 
 import eu.domibus.connector.c2ctests.config.ConnectorTestConfigurationProperties;
@@ -29,6 +28,7 @@ import eu.domibus.connector.ui.dto.WebMessageDetail;
 import eu.domibus.connector.ui.dto.WebMessageDetail.Party;
 import eu.domibus.connector.ui.dto.WebMessageFile;
 import eu.domibus.connector.ui.dto.WebMessageFileType;
+import eu.europa.esig.dss.model.MimeType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.util.StreamUtils;
@@ -106,13 +106,13 @@ public class WebConnectorTestService {
 		.filter(f -> f.getFileType().equals(WebMessageFileType.BUSINESS_ATTACHMENT))
 		.forEach(a -> {
 			byte[] bytes = a.getFileContent();
-			DataHandler dh = ConversionTools.convertByteArrayToDataHandler(bytes, MimeTypeEnum.BINARY.getMimeTypeString());
+			DataHandler dh = ConversionTools.convertByteArrayToDataHandler(bytes, MimeType.BINARY.getMimeTypeString());
 			
 			DomibusConnectorMessageAttachmentType attachment = new DomibusConnectorMessageAttachmentType();
 			attachment.setAttachment(dh);
 			attachment.setName(a.getFileName());
 			attachment.setIdentifier(a.getFileName());
-			attachment.setMimeType(MimeTypeEnum.BINARY.getMimeTypeString());
+			attachment.setMimeType(MimeType.BINARY.getMimeTypeString());
 			connectorMsg.getMessageAttachments().add(attachment );
 		});
 		
@@ -144,7 +144,7 @@ public class WebConnectorTestService {
 			
 			document.setAesType(DomibusConnectorDocumentAESType.AUTHENTICATION_BASED);
 			
-			DataHandler dh = ConversionTools.convertByteArrayToDataHandler(fileContent, MimeTypeEnum.PDF.getMimeTypeString());
+			DataHandler dh = ConversionTools.convertByteArrayToDataHandler(fileContent, MimeType.PDF.getMimeTypeString());
 			document.setDocument(dh );
 			
 			content.setDocument(document );

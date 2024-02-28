@@ -12,8 +12,6 @@ import eu.domibus.connector.tools.logging.LoggingMarker;
 import eu.ecodex.dss.model.token.LegalTrustLevel;
 import eu.ecodex.dss.model.token.Token;
 import eu.ecodex.dss.service.ECodexContainerService;
-import eu.europa.esig.dss.enumerations.MimeType;
-import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -37,10 +35,10 @@ import eu.ecodex.dss.model.checks.CheckResult;
 import eu.ecodex.dss.service.ECodexException;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
-
+import eu.europa.esig.dss.model.MimeType;
 
 import java.io.OutputStream;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 import org.springframework.util.StreamUtils;
 
@@ -115,12 +113,12 @@ public class DomibusSecurityToolkitImpl implements DomibusConnectorSecurityToolk
             String pdfName = StringUtils.isEmpty(document.getDocumentName()) ? MAIN_DOCUMENT_NAME
                     + ".pdf"
                     : messageContent.getDocument().getDocumentName();
-            dssDocument = createLargeFileBasedDssDocument(document.getDocument(), pdfName, MimeTypeEnum.PDF);
+            dssDocument = createLargeFileBasedDssDocument(document.getDocument(), pdfName, MimeType.PDF);
 
             // no business document - make xml to main document
         } else if (message.getMessageContent().getXmlContent() != null) {
             byte[] content = message.getMessageContent().getXmlContent();
-            dssDocument = new InMemoryDocument(content, MAIN_DOCUMENT_NAME + ".xml", MimeTypeEnum.XML);
+            dssDocument = new InMemoryDocument(content, MAIN_DOCUMENT_NAME + ".xml", MimeType.XML);
         } else {
             LOGGER.error("No content found for container!");
             throw new RuntimeException("not valid without document!");
@@ -211,7 +209,7 @@ public class DomibusSecurityToolkitImpl implements DomibusConnectorSecurityToolk
                     if (tokenXML != null) {
                         LOGGER.trace("converting tokenXml {[{}] to message attachment and appending it to message", tokenXML);
                         tokenXML.setName(TOKEN_XML_FILE_NAME);
-                        tokenXML.setMimeType(MimeTypeEnum.XML);
+                        tokenXML.setMimeType(MimeType.XML);
                         DomibusConnectorMessageAttachment tokenAttachment = convertDocumentToMessageAttachment(message, tokenXML, TOKEN_XML_IDENTIFIER);
                         message.addAttachment(tokenAttachment);
                     }
@@ -335,10 +333,10 @@ public class DomibusSecurityToolkitImpl implements DomibusConnectorSecurityToolk
 
                                 documentBuilder.setContent(bigDataRef);
 
-                                LOGGER.trace("recieveContainerContents: check if MimeTypeEnum.PDF [{}] equals to [{}]",
-                                        MimeTypeEnum.PDF.getMimeTypeString(), container.getToken().getDocumentType());
+                                LOGGER.trace("recieveContainerContents: check if MimeType.PDF [{}] equals to [{}]",
+                                        MimeType.PDF.getMimeTypeString(), container.getToken().getDocumentType());
 
-                                if (MimeTypeEnum.PDF.getMimeTypeString().equals(container.getToken().getDocumentType())) {
+                                if (MimeType.PDF.getMimeTypeString().equals(container.getToken().getDocumentType())) {
                                     String docName = MAIN_DOCUMENT_NAME;
                                     if (!StringUtils.isEmpty(container.getBusinessDocument().getName())) {
                                         docName = container.getBusinessDocument().getName();
@@ -347,10 +345,10 @@ public class DomibusSecurityToolkitImpl implements DomibusConnectorSecurityToolk
                                     message.getMessageContent().setDocument(documentBuilder.build());
                                 }
 
-                                LOGGER.trace("recieveContainerContents: check if MimeTypeEnum.XML [{}] equals to [{}]",
-                                        MimeTypeEnum.XML.getMimeTypeString(), container.getToken().getDocumentType());
+                                LOGGER.trace("recieveContainerContents: check if MimeType.XML [{}] equals to [{}]",
+                                        MimeType.XML.getMimeTypeString(), container.getToken().getDocumentType());
 
-                                if (MimeTypeEnum.XML.getMimeTypeString().equals(container.getToken().getDocumentType())
+                                if (MimeType.XML.getMimeTypeString().equals(container.getToken().getDocumentType())
 //                                        && !message.getMessageDetails().getAction().isDocumentRequired()
                                 ) {
                                     LOGGER.trace("recieveContainerContents: Writing byteContent into MessageContent.setXmlContent");
@@ -386,7 +384,7 @@ public class DomibusSecurityToolkitImpl implements DomibusConnectorSecurityToolk
                         DSSDocument tokenPDF = container.getTokenPDF();
                         if (tokenPDF != null) {
                             try {
-                                tokenPDF.setMimeType(MimeTypeEnum.PDF);
+                                tokenPDF.setMimeType(MimeType.PDF);
                                 tokenPDF.setName(TOKEN_PDF_FILE_NAME);
                                 DomibusConnectorMessageAttachment attachment = convertDocumentToMessageAttachment(message, tokenPDF, TOKEN_PDF_IDENTIFIER);
                                 message.addAttachment(attachment);
@@ -398,7 +396,7 @@ public class DomibusSecurityToolkitImpl implements DomibusConnectorSecurityToolk
                         DSSDocument tokenXML = container.getTokenXML();
                         if (tokenXML != null) {
                             try {
-                                tokenXML.setMimeType(MimeTypeEnum.XML);
+                                tokenXML.setMimeType(MimeType.XML);
                                 tokenXML.setName(TOKEN_XML_FILE_NAME);
                                 DomibusConnectorMessageAttachment attachment = convertDocumentToMessageAttachment(message, tokenXML, TOKEN_XML_IDENTIFIER);
                                 message.addAttachment(attachment);
@@ -479,7 +477,7 @@ public class DomibusSecurityToolkitImpl implements DomibusConnectorSecurityToolk
         LargeFileReference bigDataRef = bigDataPersistenceService.createDomibusConnectorBigDataReference(message.getConnectorMessageIdAsString(), document.getName(), document.getMimeType().getMimeTypeString());
 
         String documentName = document.getName();
-        String mimeTypeString = MimeTypeEnum.BINARY.getMimeTypeString();
+        String mimeTypeString = MimeType.BINARY.getMimeTypeString();
         if (document.getMimeType() != null) {
             mimeTypeString = document.getMimeType().getMimeTypeString();
         }
@@ -533,7 +531,7 @@ public class DomibusSecurityToolkitImpl implements DomibusConnectorSecurityToolk
         try (InputStream inputStream = readableDataSource.getInputStream()) {
             byte[] content = StreamUtils.copyToByteArray(inputStream);
             inputStream.close();
-            InMemoryDocument dssDocument = new InMemoryDocument(content, name, MimeTypeEnum.PDF);
+            InMemoryDocument dssDocument = new InMemoryDocument(content, name, MimeType.PDF);
             return dssDocument;
         } catch (IOException ioe) {
             throw new RuntimeException("error while loading data from bigDataPersistenceService", ioe);

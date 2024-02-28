@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.core.style.ToStringCreator;
 import org.springframework.validation.annotation.Validated;
 
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 
 
 @Validated

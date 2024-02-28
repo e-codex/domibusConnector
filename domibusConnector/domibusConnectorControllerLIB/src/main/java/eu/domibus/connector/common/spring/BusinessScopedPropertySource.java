@@ -14,7 +14,7 @@ import org.springframework.lang.NonNull;
 import org.springframework.lang.NonNullApi;
 import org.springframework.util.CollectionUtils;
 
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;

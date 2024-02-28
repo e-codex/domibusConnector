@@ -1,11 +1,10 @@
 
 package eu.domibus.connector.security.libtests.ecodexcontainer;
 
-import eu.europa.esig.dss.enumerations.MimeType;
-import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.enumerations.DigestAlgorithm;
 import eu.europa.esig.dss.model.DSSException;
+import eu.europa.esig.dss.model.MimeType;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -54,7 +53,7 @@ public class MyBigDssFile implements DSSDocument {
 
     @Override
     public MimeType getMimeType() {
-        return MimeTypeEnum.BINARY;
+        return MimeType.BINARY;
     }
 
     @Override

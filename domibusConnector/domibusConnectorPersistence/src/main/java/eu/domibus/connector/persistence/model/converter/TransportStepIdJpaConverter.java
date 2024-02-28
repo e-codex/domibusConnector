@@ -2,8 +2,8 @@ package eu.domibus.connector.persistence.model.converter;
 
 import eu.domibus.connector.controller.service.TransportStateService.TransportId;
 
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.Converter;
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 
 @Converter(autoApply = true)
 public class TransportStepIdJpaConverter implements AttributeConverter<TransportId, String> {
