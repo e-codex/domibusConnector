@@ -23,7 +23,6 @@ import eu.ecodex.dss.util.*;
 import eu.europa.esig.dss.enumerations.*;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
-import eu.europa.esig.dss.model.MimeType;
 import eu.europa.esig.dss.spi.DSSUtils;
 import eu.europa.esig.dss.validation.reports.Reports;
 import eu.europa.esig.xmldsig.jaxb.DigestMethodType;
@@ -595,7 +594,7 @@ public class DSSECodexContainerService implements ECodexContainerService {
 			signedContentZip.close();
 
 			// create asic-s container
-			final DSSDocument toBeSigned = new InMemoryDocument(signedContentBytes.toByteArray(), ContainerFileDefinitions.SIGNED_CONTENT_REF, MimeType.BINARY); //TODO: replace InMemoryDocument with Streaming Document
+			final DSSDocument toBeSigned = new InMemoryDocument(signedContentBytes.toByteArray(), ContainerFileDefinitions.SIGNED_CONTENT_REF, MimeTypeEnum.BINARY); //TODO: replace InMemoryDocument with Streaming Document
 			return SigningUtil.signASiC(signingParameters, toBeSigned);
 
 		} finally {

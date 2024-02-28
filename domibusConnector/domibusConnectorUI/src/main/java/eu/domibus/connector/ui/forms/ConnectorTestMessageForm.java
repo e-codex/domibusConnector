@@ -1,22 +1,19 @@
 package eu.domibus.connector.ui.forms;
 
-import java.util.List;
-
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.formlayout.FormLayout;
-import com.vaadin.flow.component.textfield.GeneratedVaadinTextField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.binder.ValidationResult;
 import com.vaadin.flow.data.binder.Validator;
-
 import eu.domibus.connector.domain.model.DomibusConnectorParty;
 import eu.domibus.connector.domain.model.DomibusConnectorParty.PartyRoleType;
 import eu.domibus.connector.ui.dto.WebMessage;
 import eu.domibus.connector.ui.dto.WebMessageDetail;
-import eu.domibus.connector.ui.dto.WebMessageDetail.Party;
-import eu.domibus.connector.ui.dto.WebMessageDetail.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ConnectorTestMessageForm extends FormLayout {
 	
@@ -125,13 +122,13 @@ public class ConnectorTestMessageForm extends FormLayout {
 	}
 	
 	public void setParties(List<DomibusConnectorParty> parties) {
-		
+
 		toParty.setItems(parties.stream()
 				.filter(p -> p.getRoleType().equals(PartyRoleType.RESPONDER))
-								.map(p -> new WebMessageDetail.Party(p.getPartyId(), p.getPartyIdType(), p.getRole())));
+								.map(p -> new WebMessageDetail.Party(p.getPartyId(), p.getPartyIdType(), p.getRole())).collect(Collectors.toList()));
 		fromParty.setItems(parties.stream()
 				.filter(p -> p.getRoleType().equals(PartyRoleType.INITIATOR))
-				.map(p -> new WebMessageDetail.Party(p.getPartyId(), p.getPartyIdType(), p.getRole())));
+				.map(p -> new WebMessageDetail.Party(p.getPartyId(), p.getPartyIdType(), p.getRole())).collect(Collectors.toList()));
 	}
 	
 	public void setMessage(WebMessage message) {

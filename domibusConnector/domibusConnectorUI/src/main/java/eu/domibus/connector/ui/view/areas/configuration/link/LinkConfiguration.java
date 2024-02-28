@@ -31,7 +31,7 @@ import eu.domibus.connector.ui.layout.DCVerticalLayoutWithTitleAndHelpButton;
 
 import org.springframework.context.ApplicationContext;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;

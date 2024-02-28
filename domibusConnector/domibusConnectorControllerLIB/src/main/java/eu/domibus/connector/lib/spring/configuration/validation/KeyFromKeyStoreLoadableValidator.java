@@ -2,7 +2,7 @@ package eu.domibus.connector.lib.spring.configuration.validation;
 
 import eu.domibus.connector.lib.spring.configuration.KeyAndKeyStoreConfigurationProperties;
 
-import javax.validation.*;
+import jakarta.validation.*;
 import java.util.HashSet;
 import java.util.Set;
 

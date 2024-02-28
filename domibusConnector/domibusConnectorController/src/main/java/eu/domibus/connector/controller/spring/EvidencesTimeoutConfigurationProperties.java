@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 @Component(EvidencesTimeoutConfigurationProperties.BEAN_NAME)
 @ConfigurationProperties(prefix="connector.controller.evidence")

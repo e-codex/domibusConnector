@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
-import javax.validation.*;
+import jakarta.validation.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;

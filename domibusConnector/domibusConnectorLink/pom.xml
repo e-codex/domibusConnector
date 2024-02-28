@@ -47,8 +47,8 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.jms</groupId>
-            <artifactId>javax.jms-api</artifactId>
+            <groupId>jakarta.jms</groupId>
+            <artifactId>jakarta.jms-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -62,10 +62,6 @@
             <groupId>eu.domibus.connector</groupId>
             <artifactId>domibusConnectorPersistence</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>eu.ecodex.utils</groupId>
-            <artifactId>spring-property-configuration-manager-api</artifactId>
         </dependency>
         <!-- Test dependencies -->
         <dependency>
@@ -116,11 +112,6 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.junit.jupiter</groupId>-->
-        <!--            <artifactId>junit-jupiter-engine</artifactId>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>eu.domibus</groupId>
             <artifactId>domibus-ws-stubs</artifactId>
@@ -146,11 +137,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.github.database-rider</groupId>
