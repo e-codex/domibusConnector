@@ -5,7 +5,7 @@ import java.net.MalformedURLException;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import jakarta.xml.bind.JAXBException;
+import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;

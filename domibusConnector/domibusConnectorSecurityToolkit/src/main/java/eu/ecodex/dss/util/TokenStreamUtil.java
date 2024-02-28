@@ -9,15 +9,22 @@
  */
 package eu.ecodex.dss.util;
 
-import eu.ecodex.dss.model.token.OriginalValidationReportContainer;
-import eu.ecodex.dss.model.token.Token;
-import jakarta.xml.bind.*;
-
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.PropertyException;
+import javax.xml.bind.Unmarshaller;
+
+import eu.ecodex.dss.model.token.OriginalValidationReportContainer;
+import eu.ecodex.dss.model.token.Signature;
+import eu.ecodex.dss.model.token.Token;
+//import eu.europa.ec.markt.dss.validation.report.ValidationReport;
 
 /**
  * Utility class to decode/encode a {@link Token}

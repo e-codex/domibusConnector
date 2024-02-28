@@ -2,7 +2,7 @@ package eu.domibus.connector.persistence.dao;
 
 import eu.domibus.connector.persistence.model.PDomibusConnectorEvidence;
 import java.util.List;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 import eu.domibus.connector.persistence.model.PDomibusConnectorMessage;
 import eu.domibus.connector.persistence.model.enums.EvidenceType;

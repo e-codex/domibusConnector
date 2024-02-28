@@ -2,7 +2,7 @@ package eu.domibus.connector.persistence.model.converter;
 
 import eu.domibus.connector.domain.enums.TransportState;
 
-import jakarta.persistence.AttributeConverter;
+import javax.persistence.AttributeConverter;
 
 public class TransportStateJpaConverter implements AttributeConverter<TransportState, java.lang.String> {
 

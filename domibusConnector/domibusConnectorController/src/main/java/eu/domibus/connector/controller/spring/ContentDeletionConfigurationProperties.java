@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 
 @Component(ContentDeletionConfigurationProperties.BEAN_NAME)
 @ConfigurationProperties(prefix = ContentDeletionConfigurationProperties.PREFIX)

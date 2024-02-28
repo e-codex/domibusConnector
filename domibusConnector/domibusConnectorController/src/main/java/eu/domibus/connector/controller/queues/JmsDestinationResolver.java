@@ -6,9 +6,9 @@ import org.springframework.jms.support.destination.DestinationResolver;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import jakarta.jms.Destination;
-import jakarta.jms.JMSException;
-import jakarta.jms.Session;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Session;
 
 @Component
 public class JmsDestinationResolver implements DestinationResolver {

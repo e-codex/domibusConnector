@@ -5,7 +5,7 @@ import eu.domibus.connector.domain.model.DetachedSignature;
 import eu.domibus.connector.domain.model.LargeFileReference;
 import eu.domibus.connector.domain.model.DomibusConnectorMessageDocument;
 
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 
 
 /**

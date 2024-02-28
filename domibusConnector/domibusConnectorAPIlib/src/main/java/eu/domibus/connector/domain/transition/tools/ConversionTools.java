@@ -8,9 +8,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 
-import jakarta.activation.DataHandler;
-import jakarta.activation.DataSource;
-import jakarta.validation.constraints.NotNull;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.validation.constraints.NotNull;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -89,7 +89,7 @@ public class ConversionTools {
     
     
     /**
-     * Converts a {@link jakarta.activation.DataHandler} into a byte[]
+     * Converts a {@link javax.activation.DataHandler} into a byte[]
      * @param dataHandler
      * @return
      */

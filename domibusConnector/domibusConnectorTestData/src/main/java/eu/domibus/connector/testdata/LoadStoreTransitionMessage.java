@@ -12,8 +12,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.util.StreamUtils;
 
-import jakarta.activation.DataHandler;
-import jakarta.activation.DataSource;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
 import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
@@ -25,7 +25,7 @@ import java.nio.file.*;
 import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
-import jakarta.annotation.Nullable;
+import javax.annotation.Nullable;
 
 /**
  * Load and store a Transition Message to the FileSystem

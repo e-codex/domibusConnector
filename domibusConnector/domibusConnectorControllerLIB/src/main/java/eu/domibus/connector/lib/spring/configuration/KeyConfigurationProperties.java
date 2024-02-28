@@ -3,9 +3,9 @@ package eu.domibus.connector.lib.spring.configuration;
 import eu.ecodex.utils.configuration.api.annotation.ConfigurationLabel;
 import org.hibernate.validator.constraints.Length;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
-import jakarta.validation.constraints.NotNull;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.validation.constraints.NotNull;
 
 /**
  * Configuration properties for referencing a

@@ -20,7 +20,8 @@ import eu.domibus.connector.ui.forms.FormsUtil;
 import eu.domibus.connector.ui.layout.DCMainLayout;
 import eu.domibus.connector.ui.view.areas.configuration.util.ConfigurationProperties;
 
-
+//@HtmlImport("styles/shared-styles.html")
+//@StyleSheet("styles/grid.css")
 @UIScope
 @org.springframework.stereotype.Component
 @Route(value = Info.ROUTE, layout = DCMainLayout.class)

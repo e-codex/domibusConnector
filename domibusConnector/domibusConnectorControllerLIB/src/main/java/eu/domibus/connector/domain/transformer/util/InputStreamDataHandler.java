@@ -1,8 +1,8 @@
 
 package eu.domibus.connector.domain.transformer.util;
 
-import jakarta.activation.DataHandler;
-import jakarta.activation.DataSource;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
 
 /**
  *

@@ -14,6 +14,7 @@ import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.vaadin.klaudeta.PaginatedGrid;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
@@ -33,7 +34,7 @@ import eu.domibus.connector.ui.persistence.service.DomibusConnectorWebMessagePer
 import eu.domibus.connector.ui.persistence.service.impl.DomibusConnectorWebMessagePersistenceServiceImpl;
 import eu.domibus.connector.ui.view.areas.messages.MessageDetails;
 
-public class WebMessagesGrid extends Grid<WebMessage> implements AfterNavigationObserver {
+public class WebMessagesGrid extends PaginatedGrid<WebMessage> implements AfterNavigationObserver {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(WebMessagesGrid.class);
 	

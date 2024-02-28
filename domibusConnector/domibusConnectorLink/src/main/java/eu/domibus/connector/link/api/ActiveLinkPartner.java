@@ -5,6 +5,7 @@ import eu.domibus.connector.domain.model.DomibusConnectorLinkPartner;
 import lombok.Data;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import javax.annotation.CheckForNull;
 import java.util.Optional;
 
 public class ActiveLinkPartner {
@@ -13,10 +14,10 @@ public class ActiveLinkPartner {
 
     private ActiveLink parentLink;
 
-    //Nullable
+    @CheckForNull
     private ConfigurableApplicationContext childContext;
 
-    //nullable
+    @CheckForNull
     private SubmitToLinkPartner submitToLink;
 
     public DomibusConnectorLinkPartner getLinkPartner() {

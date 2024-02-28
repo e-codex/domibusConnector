@@ -6,7 +6,7 @@ import eu.domibus.connector.domain.model.DomibusConnectorMessageId;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 /**
  *

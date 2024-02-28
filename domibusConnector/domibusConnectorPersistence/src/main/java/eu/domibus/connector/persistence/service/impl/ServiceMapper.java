@@ -4,7 +4,7 @@ import eu.domibus.connector.domain.model.DomibusConnectorService;
 import eu.domibus.connector.persistence.model.PDomibusConnectorService;
 import org.springframework.beans.BeanUtils;
 
-import jakarta.annotation.Nullable;
+import javax.annotation.Nullable;
 
 public class ServiceMapper {
 

@@ -1,6 +1,6 @@
 package eu.domibus.connector.persistence.model;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

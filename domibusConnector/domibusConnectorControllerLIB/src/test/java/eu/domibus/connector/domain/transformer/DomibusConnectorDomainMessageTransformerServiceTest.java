@@ -14,7 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StreamUtils;
 
-import jakarta.activation.DataHandler;
+import javax.activation.DataHandler;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;

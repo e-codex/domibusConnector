@@ -4,13 +4,15 @@ import eu.domibus.connector.security.DomibusSecurityToolkitImpl;
 import eu.ecodex.dss.model.*;
 import eu.ecodex.dss.model.token.AdvancedSystemType;
 import eu.ecodex.dss.model.token.TokenIssuer;
+import eu.ecodex.dss.service.ECodexLegalValidationService;
 import eu.ecodex.dss.service.impl.dss.DSSECodexContainerService;
+import eu.ecodex.dss.service.impl.dss.DSSECodexLegalValidationService;
 import eu.ecodex.dss.util.SignatureParametersFactory;
 import eu.europa.esig.dss.enumerations.DigestAlgorithm;
 import eu.europa.esig.dss.enumerations.EncryptionAlgorithm;
-import eu.europa.esig.dss.enumerations.MimeTypeEnum;
 import eu.europa.esig.dss.model.DSSDocument;
 import eu.europa.esig.dss.model.InMemoryDocument;
+import eu.europa.esig.dss.model.MimeType;
 import eu.europa.esig.dss.service.http.proxy.ProxyConfig;
 import eu.europa.esig.dss.service.http.proxy.ProxyProperties;
 import org.junit.jupiter.api.BeforeEach;
@@ -94,18 +96,14 @@ public class DSSEcodexContainerServiceTest {
         ProxyProperties httpsProxyProperties = new ProxyProperties();
         httpsProxyProperties.setHost(properties.getProperty("https.proxy.host"));
         httpsProxyProperties.setPort(Integer.valueOf(properties.getProperty("https.proxy.port")));
-        if (properties.getProperty("https.proxy.password") != null) {
-            httpsProxyProperties.setPassword(properties.getProperty("https.proxy.password").toCharArray());
-        }
+        httpsProxyProperties.setPassword(properties.getProperty("https.proxy.password"));
         httpsProxyProperties.setUser(properties.getProperty("https.proxy.user"));
         proxyConfig.setHttpsProperties(httpsProxyProperties);
         
         ProxyProperties httpProxyProperties = new ProxyProperties();
         httpProxyProperties.setHost(properties.getProperty("http.proxy.host"));
         httpProxyProperties.setPort(Integer.valueOf(properties.getProperty("http.proxy.port")));
-        if (properties.getProperty("http.proxy.password") != null) {
-            httpProxyProperties.setPassword(properties.getProperty("http.proxy.password").toCharArray());
-        }
+        httpProxyProperties.setPassword(properties.getProperty("http.proxy.password"));
         httpProxyProperties.setUser(properties.getProperty("http.proxy.user"));
         proxyConfig.setHttpProperties(httpProxyProperties);
         
@@ -160,7 +158,7 @@ public class DSSEcodexContainerServiceTest {
         DSSDocument xmlDocument = new InMemoryDocument(
             loadByteArrayFromClassPathRessource("/examples/Form_A.xml"),
             DomibusSecurityToolkitImpl.CONTENT_XML_IDENTIFIER + ".xml",
-            MimeTypeEnum.PDF);
+            MimeType.PDF);        
    
         businessContent.setDocument(xmlDocument);
         
@@ -168,7 +166,7 @@ public class DSSEcodexContainerServiceTest {
         DSSDocument formAPdf = new InMemoryDocument(
                             loadByteArrayFromClassPathRessource("/examples/Form_A.pdf"),
                             DomibusSecurityToolkitImpl.MAIN_DOCUMENT_NAME + ".pdf",
-                            MimeTypeEnum.PDF);
+                            MimeType.PDF);        
         businessContent.addAttachment(formAPdf);
         
         //big dss document (4GB random bytes)
@@ -178,7 +176,7 @@ public class DSSEcodexContainerServiceTest {
         DSSDocument attachmentOne = new InMemoryDocument(
                 loadByteArrayFromClassPathRessource("/examples/supercool.pdf"),
                 "supercool.pdf",
-                MimeTypeEnum.PDF);
+                MimeType.PDF);
         
         businessContent.addAttachment(attachmentOne);
         

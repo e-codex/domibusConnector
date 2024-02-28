@@ -5,7 +5,7 @@ import eu.domibus.connector.domain.model.LargeFileReference;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import jakarta.activation.DataHandler;
+import javax.activation.DataHandler;
 
 /**
  *

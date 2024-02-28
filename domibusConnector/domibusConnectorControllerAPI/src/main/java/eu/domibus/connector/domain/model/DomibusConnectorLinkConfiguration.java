@@ -3,8 +3,8 @@ package eu.domibus.connector.domain.model;
 import eu.domibus.connector.domain.enums.ConfigurationSource;
 import org.springframework.core.style.ToStringCreator;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

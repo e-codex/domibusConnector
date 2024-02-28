@@ -4,7 +4,7 @@ import com.vaadin.flow.component.AbstractField;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.data.value.ValueChangeMode;
@@ -26,7 +26,7 @@ public class DCVerticalLayoutWithWebMessageGrid extends VerticalLayout {
 	public DCVerticalLayoutWithWebMessageGrid(WebMessagesGrid grid) {
 		this.grid = grid;
 		grid.setPageSize(pageSize);
-//		grid.setPaginatorSize(5);
+		grid.setPaginatorSize(5);
 
 		VerticalLayout gridControl = createGridControlLayout();
 		
@@ -55,7 +55,7 @@ public class DCVerticalLayoutWithWebMessageGrid extends VerticalLayout {
 			Dialog hideableColsDialog = new Dialog();
 			
 			Div headerContent = new Div();
-			Span header = new Span("Select columns you want to see in the list");
+			Label header = new Label("Select columns you want to see in the list");
 			header.getStyle().set("font-weight", "bold");
 			header.getStyle().set("font-style", "italic");
 			headerContent.getStyle().set("text-align", "center");

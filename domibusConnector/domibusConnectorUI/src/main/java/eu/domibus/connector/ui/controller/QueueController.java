@@ -14,9 +14,9 @@ import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.jms.JMSException;
-import jakarta.jms.Message;
-import jakarta.jms.Queue;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Queue;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,7 +61,7 @@ public class QueueController {
     public void moveMsgFromDlqToQueue(Message msg) {
         String jmsDestination = null;
         try {
-            if (msg.getJMSDestination() instanceof jakarta.jms.Queue) {
+            if (msg.getJMSDestination() instanceof javax.jms.Queue) {
                 jmsDestination = ((Queue) msg.getJMSDestination()).getQueueName();
             } else {
                 String error = "Illegal destination: [" + msg.getJMSDestination() + "] Other destinations then queues are not supported!";

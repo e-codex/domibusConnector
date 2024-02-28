@@ -4,8 +4,8 @@ import eu.domibus.connector.controller.queues.QueueHelper;
 import eu.domibus.connector.controller.service.HasManageableDlq;
 import eu.domibus.connector.domain.model.DomibusConnectorMessage;
 
-import jakarta.jms.Message;
-import jakarta.jms.Queue;
+import javax.jms.Message;
+import javax.jms.Queue;
 import java.util.List;
 
 public abstract class ManageableQueue implements HasManageableDlq {

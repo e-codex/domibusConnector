@@ -2,8 +2,8 @@ package eu.domibus.connector.persistence.model.converter;
 
 import eu.domibus.connector.domain.model.DomibusConnectorParty.PartyRoleType;
 
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.Converter;
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 
 @Converter(autoApply = true)
 public class PartyRoleTypeJpaConverter implements AttributeConverter<PartyRoleType, String> {

@@ -4,7 +4,7 @@ import eu.domibus.connector.lib.spring.configuration.KeyConfigurationProperties;
 import eu.domibus.connector.lib.spring.configuration.StoreConfigurationProperties;
 import org.springframework.core.io.ClassPathResource;
 
-import jakarta.validation.ConstraintViolation;
+import javax.validation.ConstraintViolation;
 import java.util.Set;
 
 public class ConstraintViolationSetHelper {

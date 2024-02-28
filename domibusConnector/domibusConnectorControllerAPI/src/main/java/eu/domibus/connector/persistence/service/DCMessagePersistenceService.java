@@ -8,7 +8,7 @@ import eu.domibus.connector.persistence.service.exceptions.PersistenceException;
 
 import java.util.List;
 import java.util.Optional;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 /**
  *

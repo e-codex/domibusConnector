@@ -4,7 +4,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import eu.domibus.connector.domain.model.DomibusConnectorParty;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 //@IdClass(PDomibusConnectorPartyPK.class)

@@ -23,8 +23,8 @@ See SPOCS_WP3_LICENSE_URL for license information
 --------------------------------------------------------------------------- */
 package eu.spocseu.edeliverygw;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
 
 /**
  * This class represents a Holder for the adressing, spocs and etsi JAXB
@@ -35,11 +35,11 @@ import jakarta.xml.bind.JAXBException;
 public class JaxbContextHolder
 {
 
-	private static JAXBContext spocsContext = null;
-	private static JAXBContext soapContext = null;
-	private static JAXBContext addressingContext = null;
+	private static javax.xml.bind.JAXBContext spocsContext = null;
+	private static javax.xml.bind.JAXBContext soapContext = null;
+	private static javax.xml.bind.JAXBContext addressingContext = null;
 
-	private static JAXBContext etsi_vi = null;
+	private static javax.xml.bind.JAXBContext etsi_vi = null;
 
 	/**
 	 * Internal method to get the JAXB context to marshal and unmarshal spocs
@@ -49,7 +49,7 @@ public class JaxbContextHolder
 	 * @throws JAXBException
 	 *             In case of errors creating the JAXB context.
 	 */
-	public static JAXBContext getSpocsJaxBContext()
+	public static javax.xml.bind.JAXBContext getSpocsJaxBContext()
 			throws JAXBException
 	{
 		if (spocsContext == null) {
@@ -60,7 +60,7 @@ public class JaxbContextHolder
 	}
 	
 	
-	public static JAXBContext getSoapBindingJaxBContext()
+	public static javax.xml.bind.JAXBContext getSoapBindingJaxBContext()
 			throws JAXBException
 	{
 		if (soapContext == null) {
@@ -97,7 +97,7 @@ public class JaxbContextHolder
 	 * @throws JAXBException
 	 *             In case of errors creating the JAXB context.
 	 */
-	public static JAXBContext getETSIV2JaxBContext()
+	public static javax.xml.bind.JAXBContext getETSIV2JaxBContext()
 			throws JAXBException
 	{
 		if (etsi_vi == null) {

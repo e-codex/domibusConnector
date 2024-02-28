@@ -3,7 +3,7 @@ package eu.domibus.connector.domain.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.validation.annotation.Validated;
 
-import jakarta.validation.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 
 @Validated
 public class DomibusConnectorMessageId {

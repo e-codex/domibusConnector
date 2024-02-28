@@ -8,11 +8,11 @@ import org.springframework.lang.Nullable;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.jms.support.converter.SmartMessageConverter;
 
-import jakarta.jms.JMSException;
-import jakarta.jms.Message;
-import jakarta.jms.Session;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validator;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.Set;
 import java.util.stream.Collectors;
 

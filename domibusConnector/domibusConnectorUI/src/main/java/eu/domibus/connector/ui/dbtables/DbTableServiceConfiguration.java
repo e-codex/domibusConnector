@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import jakarta.persistence.EntityManager;
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 @Configuration

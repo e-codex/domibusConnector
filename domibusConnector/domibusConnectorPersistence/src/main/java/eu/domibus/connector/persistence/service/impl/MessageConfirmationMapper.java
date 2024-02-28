@@ -6,7 +6,7 @@ import eu.domibus.connector.persistence.model.PDomibusConnectorEvidence;
 import eu.domibus.connector.persistence.service.impl.helper.EvidenceTypeMapper;
 import eu.domibus.connector.persistence.service.impl.helper.MapperHelper;
 
-import jakarta.annotation.Nullable;
+import javax.annotation.Nullable;
 import java.io.UnsupportedEncodingException;
 
 public class MessageConfirmationMapper {

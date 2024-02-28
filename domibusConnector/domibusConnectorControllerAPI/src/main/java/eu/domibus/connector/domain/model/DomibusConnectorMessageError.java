@@ -2,7 +2,7 @@ package eu.domibus.connector.domain.model;
 
 import org.springframework.core.style.ToStringCreator;
 
-import jakarta.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;
 
 
 /**
